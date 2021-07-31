@@ -1,0 +1,127 @@
+/**
+ * Replace them with your own styles or remove the file completely.
+ */
+#wp-react-plugin-boilerplate {
+	.components {
+		&-tab-panel {
+			&__tabs {
+				margin-bottom: -1px;
+				.components-button {
+					border-width: 1px;
+					border-color: #ddd;
+					border-style: solid;
+					font-size: 14px;
+					font-weight: 600;
+					color: #444;
+					&:focus {
+						box-shadow: none;
+					}
+					&:not(:last-of-type) {
+						margin-right: 10px;
+					}
+					&:not(.wp-react-plugin-boilerplate-tab-active) {
+						background: #f5f5f5;
+					}
+					&.wp-react-plugin-boilerplate-tab-active {
+						background: #fff;
+						border-color: #007cba #ddd #fff #ddd;
+						border-width: 2px 1px 2px 1px;
+					}
+				}
+			}
+			&__tabs-item {
+				background: transparent;
+				border: none;
+				box-shadow: none;
+				border-radius: 0;
+				cursor: pointer;
+				height: 48px;
+				padding: 3px 16px;
+				margin-left: 0;
+				font-weight: 500;
+				transition: box-shadow .1s linear;
+				box-sizing: border-box;
+			}
+			&__tab-content {
+				border: 1px solid #ddd;
+				.components-base-control {
+					&__label {
+						margin-bottom: 20px;
+						margin-top: 8px;
+						display: block;
+						font-size: 16px;
+						font-weight: 600;
+					}
+				}
+				.components-card {
+					&__body {
+						.components {
+							&-panel {
+								&__body {
+									&-title {
+										.components-button {
+											font-weight: 600;
+											font-size: 14px;
+										}
+									}
+								}
+							}
+							&-base {
+								&-control {
+									&__label {
+										font-size: 13px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&-button {
+			margin-bottom: 0;
+		}
+		&-toggle-control__label {
+			font-weight: 600;
+			font-size: 14px;
+		}
+		&-input-control__container,
+		&-text-control__input {
+			width: 50%;
+		}
+		&-select-control__input,
+		&-text-control__input {
+			height: 45px !important;
+		}
+		&-toggle-control {
+			margin-bottom: 20px;
+			.components {
+				&-base {
+					&-control {
+						&__help {
+							padding-left: 47px;
+						}
+					}
+				}
+			}
+		}
+		&-panel {
+			&__body {
+				&.is-opened {
+					background: #fff;
+					border: 1px solid #ddd;
+					.components {
+						&-panel__body-title {
+							border-bottom: 1px solid #ddd;
+							background: #f3f4f5;
+							margin: -16px -16px 15px -16px;
+						}
+						&-base-control {
+							margin-bottom: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

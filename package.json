@@ -1,0 +1,19 @@
+{
+	"name": "wp-react-plugin-boilerplate",
+	"version": "1.0.0",
+	"description": "WP React Plugin Boilerplate - WordPress Setting via React and Rest API",
+	"author": "codersantosh",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^17.1.0"
+	}
+}
