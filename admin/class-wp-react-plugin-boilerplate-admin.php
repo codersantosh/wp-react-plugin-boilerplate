@@ -139,7 +139,7 @@ class Wp_React_Plugin_Boilerplate_Admin {
 				'version'   => $this->rest_version,
 			),
 		);
-
+        wp_set_script_translations( $this->plugin_name, $this->plugin_name );
 		wp_localize_script( $this->plugin_name, 'wpReactPluginBoilerplateBuild', $localize );
 	}
 
