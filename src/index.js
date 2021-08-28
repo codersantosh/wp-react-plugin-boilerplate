@@ -19,10 +19,60 @@ const {
 	render
 } = wp.element;
 
+const {
+	Card,
+	CardHeader,
+	CardBody,
+	CardDivider,
+	CardFooter,
+	Button,
+	TextControl,
+} = wp.components;
+
 const AddSettings = () => {
 
 	return (
-		<div className={'init-react'}>Hello Nepal! Hello World!!!</div>
+		<Card>
+			<CardHeader style={{overflow: 'hidden',height: '70px'}}>
+				<h1>{__( 'Settings','wp-react-plugin-boilerplate' )}</h1>
+			</CardHeader>
+
+			<CardBody>
+				<TextControl
+					label={__('Setting 1','wp-react-plugin-boilerplate')}
+					placeholder={__('Enter Text','wp-react-plugin-boilerplate')}
+					value={'Setting Value 1'}
+					onChange={newVal =>{
+						console.log(newVal)
+					}}
+				/>
+			</CardBody>
+			<CardDivider />
+			<CardBody
+				isShady
+			>
+				<TextControl
+					label={__('Setting 2','wp-react-plugin-boilerplate')}
+					placeholder={__('Enter Another Text','wp-react-plugin-boilerplate')}
+					value={'Setting Value 2'}
+					onChange={newVal =>{
+						console.log(newVal)
+					}}
+				/>
+			</CardBody>
+			<CardDivider />
+			<CardFooter>
+				<Button
+					className="button"
+					onClick={() =>{
+						console.log('Save Setting')
+					}}
+					isPrimary
+				>
+					{__( 'Save Settings','wp-react-plugin-boilerplate' )}
+				</Button>
+			</CardFooter>
+		</Card>
 	)
 }
 document.addEventListener('DOMContentLoaded', () => {
