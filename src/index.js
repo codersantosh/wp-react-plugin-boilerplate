@@ -21,14 +21,19 @@ const {
 } = wp.element;
 
 const {
+	TabPanel,
 	Card,
 	CardHeader,
 	CardBody,
 	CardDivider,
 	CardFooter,
 	Button,
-	TextControl,
 } = wp.components;
+
+import {
+	GetTab,
+	RenderTab
+} from "./components/tabs";
 
 const AddSettings = () => {
 
@@ -45,29 +50,14 @@ const AddSettings = () => {
 			<CardHeader style={{overflow: 'hidden',height: '70px'}}>
 				<h1>{__( 'Settings','wp-react-plugin-boilerplate' )}</h1>
 			</CardHeader>
-
-			<CardBody>
-				<TextControl
-					label={__('Setting 1','wp-react-plugin-boilerplate')}
-					placeholder={__('Enter Text','wp-react-plugin-boilerplate')}
-					value={allSetting && allSetting['setting_1']}
-					onChange={newVal =>
-						setStateSettings('setting_1',newVal)
-					}
-				/>
-			</CardBody>
-			<CardDivider />
-			<CardBody
-				isShady
-			>
-				<TextControl
-					label={__('Setting 2','wp-react-plugin-boilerplate')}
-					placeholder={__('Enter Another Text','wp-react-plugin-boilerplate')}
-					value={allSetting && allSetting['setting_2']}
-					onChange={newVal =>
-						setStateSettings('setting_2',newVal)
-					}
-				/>
+			<CardBody >
+				<TabPanel
+					className="wp-react-plugin-boilerplate"
+					activeClass="wp-react-plugin-boilerplate-tab-active"
+					tabs={ GetTab()}
+				>
+					{ ( tab ) => <RenderTab tab={tab} settings={allSetting} setSetting ={setStateSettings} /> }
+				</TabPanel>
 			</CardBody>
 			<CardDivider />
 			<CardFooter>
