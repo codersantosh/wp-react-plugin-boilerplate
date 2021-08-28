@@ -42,6 +42,24 @@ class Wp_React_Plugin_Boilerplate_Admin {
 	 */
 	private $version;
 
+    /**
+     * The Rest route namespace.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $namespace    The Rest route namespace.
+     */
+    private $namespace = 'wp-react-plugin-boilerplate-setting-api/';
+
+    /**
+     * The rest version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $rest_version    The rest version of this plugin..
+     */
+    private $rest_version = 'v1';
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -116,8 +134,48 @@ class Wp_React_Plugin_Boilerplate_Admin {
         $localize = array(
             'version' => $this->version,
             'root_id' => $this->plugin_name,
+            'rest'    => array(
+                'namespace' => $this->namespace,
+                'version'   => $this->rest_version,
+            ),
         );
         wp_set_script_translations( $this->plugin_name, $this->plugin_name );
         wp_localize_script( $this->plugin_name, 'wpReactPluginBoilerplateBuild', $localize );
+    }
+
+    /**
+     * Register REST API route.
+     *
+     * @since    1.0.0
+     */
+    public function api_init() {
+        $namespace = $this->namespace . $this->rest_version;
+
+        register_rest_route(
+            $namespace,
+            '/get_settings',
+            array(
+                array(
+                    'methods'             => \WP_REST_Server::READABLE,
+                    'callback'            => array( $this, 'get_settings' ),
+                    'permission_callback' => function () {
+                        return current_user_can( 'manage_options' );
+                    },
+                ),
+            )
+        );
+    }
+
+    /**
+     * Get settings
+     *
+     * @since 1.0.0
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     *
+     * @return array|WP_REST_Response Plugin Settings.
+     */
+    public function get_settings( \WP_REST_Request $request ) {
+        return rest_ensure_response( wp_react_plugin_boilerplate_get_options() );
     }
 }

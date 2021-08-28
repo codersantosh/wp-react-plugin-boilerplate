@@ -21,6 +21,10 @@ const {
 } = wp.element;
 
 const {
+	apiFetch
+} = wp;
+
+const {
 	TabPanel,
 	Card,
 	CardHeader,
@@ -35,15 +39,46 @@ import {
 	RenderTab
 } from "./components/tabs";
 
+
+import {
+	useComponentDidMount,
+	useComponentDidUpdate,
+	useComponentWillUnmount
+} from "./utils/components";
+
 const AddSettings = () => {
 
 	const [ allSetting, setInitialSetting ] = useState({});
+
+	async function getSettings(){
+		let data = await apiFetch({
+			path: wpReactPluginBoilerplateBuild.rest.namespace+ wpReactPluginBoilerplateBuild.rest.version+'/get_settings'
+		});
+		if( data){
+			setInitialSetting( data );
+		}
+		else {
+			setInitialSetting( {} );
+		}
+	}
 
 	const setStateSettings = (key, val) => {
 		let newSetting = Object.assign({}, allSetting );
 		newSetting[key] = val;
 		setInitialSetting( newSetting );
 	}
+
+	useComponentDidMount(() => {
+		getSettings()
+	});
+
+	useComponentDidUpdate(() => {
+		/*Nothing for now*/
+	});
+
+	useComponentWillUnmount(() => {
+		/*Nothing for now*/
+	});
 
 	return (
 		<Card>

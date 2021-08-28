@@ -158,6 +158,8 @@ class Wp_React_Plugin_Boilerplate {
         $this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu' );
         $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_resources' );
 
+        $this->loader->add_action( 'rest_api_init', $plugin_admin, 'api_init' );
+
     }
 
 	/**
