@@ -16,7 +16,8 @@ const {
 } = wp.i18n;
 
 const {
-	render
+	render,
+	useState
 } = wp.element;
 
 const {
@@ -31,6 +32,14 @@ const {
 
 const AddSettings = () => {
 
+	const [ allSetting, setInitialSetting ] = useState({});
+
+	const setStateSettings = (key, val) => {
+		let newSetting = Object.assign({}, allSetting );
+		newSetting[key] = val;
+		setInitialSetting( newSetting );
+	}
+
 	return (
 		<Card>
 			<CardHeader style={{overflow: 'hidden',height: '70px'}}>
@@ -41,10 +50,10 @@ const AddSettings = () => {
 				<TextControl
 					label={__('Setting 1','wp-react-plugin-boilerplate')}
 					placeholder={__('Enter Text','wp-react-plugin-boilerplate')}
-					value={'Setting Value 1'}
-					onChange={newVal =>{
-						console.log(newVal)
-					}}
+					value={allSetting && allSetting['setting_1']}
+					onChange={newVal =>
+						setStateSettings('setting_1',newVal)
+					}
 				/>
 			</CardBody>
 			<CardDivider />
@@ -54,10 +63,10 @@ const AddSettings = () => {
 				<TextControl
 					label={__('Setting 2','wp-react-plugin-boilerplate')}
 					placeholder={__('Enter Another Text','wp-react-plugin-boilerplate')}
-					value={'Setting Value 2'}
-					onChange={newVal =>{
-						console.log(newVal)
-					}}
+					value={allSetting && allSetting['setting_2']}
+					onChange={newVal =>
+						setStateSettings('setting_2',newVal)
+					}
 				/>
 			</CardBody>
 			<CardDivider />
