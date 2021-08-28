@@ -55,4 +55,29 @@ class Wp_React_Plugin_Boilerplate_Admin {
 		$this->version     = $version;
 
 	}
+
+    /**
+     * Add Admin Page Menu page.
+     *
+     * @since    1.0.0
+     */
+    public function add_admin_menu() {
+
+        add_menu_page(
+            esc_html__( 'React Setting', 'wp-react-plugin-boilerplate' ),
+            esc_html__( 'React Setting', 'wp-react-plugin-boilerplate' ),
+            'manage_options',
+            $this->plugin_name,
+            array( $this, 'add_setting_root_div' )
+        );
+    }
+
+    /**
+     * Add Root Div For React.
+     *
+     * @since    1.0.0
+     */
+    public function add_setting_root_div() {
+        echo '<div id="' . $this->plugin_name . '"></div>';
+    }
 }
