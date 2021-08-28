@@ -110,6 +110,9 @@ class Wp_React_Plugin_Boilerplate_Public {
      * @return int modified length of the excerpt.
      */
     public function excerpt_length( $length  ) {
+        if( is_admin()){
+            return $length;
+        }
 
         $excerpt_length = wp_react_plugin_boilerplate_get_options('excerpt_length');
 
