@@ -35,6 +35,12 @@ import {
 	RenderTab
 } from "./components/tabs";
 
+import {
+	useComponentDidMount,
+	useComponentDidUpdate,
+	useComponentWillUnmount
+} from "./utils/components";
+
 const AddSettings = () => {
 
 	const [ allSetting, setInitialSetting ] = useState({});
@@ -44,6 +50,28 @@ const AddSettings = () => {
 		newSetting[key] = val;
 		setInitialSetting( newSetting );
 	}
+
+	useComponentDidMount(() => {
+		/*Run once*/
+		/*Runs after the component output has been rendered to the DOM*/
+		/*Good Place For API Call*/
+		/*Good Place For Start Timer*/
+		console.log('useComponentDidMount')
+	});
+
+	useComponentDidUpdate(() => {
+		/*Run multiple times*/
+		/*Runs each time when state or component change on DOM*/
+		/*Good Place For React/Gutenberg Hooks*/
+		console.log('useComponentDidUpdate')
+	});
+
+	useComponentWillUnmount(() => {
+		/*Run once*/
+		/*Runs before the component output is removed from the DOM*/
+		/*Good Place For Stop Timer*/
+		console.log('useComponentWillUnmount')
+	});
 
 	return (
 		<Card>

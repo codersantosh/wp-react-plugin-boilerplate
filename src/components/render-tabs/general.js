@@ -12,11 +12,22 @@ const {
 	TextControl,
 } = wp.components;
 
+import {
+	useComponentWillUnmount
+} from "../../utils/components";
+
 export const RenderGeneral = (props) => {
 	const {
 		settings,
 		setSetting
 	} = props.props;
+
+	useComponentWillUnmount(() => {
+		/*Run once*/
+		/*Runs before the component output is removed from the DOM*/
+		/*Good Place For Stop Timer*/
+		console.log('General ComponentWillUnmount')
+	});
 
 	return (
 		<Fragment>

@@ -14,11 +14,23 @@ const {
 	SelectControl
 } = wp.components;
 
+import {
+	useComponentWillUnmount
+} from "../../utils/components";
+
 export const RenderAdvanced = (props) => {
 	const {
 		settings,
 		setSetting
 	} = props.props;
+
+	useComponentWillUnmount(() => {
+		/*Run once*/
+		/*Runs before the component output is removed from the DOM*/
+		/*Good Place For Stop Timer*/
+		console.log('Advanced ComponentWillUnmount')
+	});
+
 	return (
 		<Fragment>
 			<CardBody>
