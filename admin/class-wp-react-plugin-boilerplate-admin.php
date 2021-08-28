@@ -80,4 +80,44 @@ class Wp_React_Plugin_Boilerplate_Admin {
     public function add_setting_root_div() {
         echo '<div id="' . $this->plugin_name . '"></div>';
     }
+
+    /**
+     * Register the CSS/JavaScript Resources for the admin area.
+     *
+     * Use Condition to Load it Only When it is Necessary
+     *
+     * @since    1.0.0
+     */
+    public function enqueue_resources() {
+
+        /**
+         * This function is provided for demonstration purposes only.
+         *
+         * An instance of this class should be passed to the run() function
+         * defined in Wp_React_Plugin_Boilerplate_Loader as all of the hooks are defined
+         * in that particular class.
+         *
+         * The Wp_React_Plugin_Boilerplate_Loader will then create the relationship
+         * between the defined hooks and the functions defined in this
+         * class.
+         */
+
+        $screen              = get_current_screen();
+        $admin_scripts_bases = array( 'toplevel_page_' . $this->plugin_name );
+        if ( ! ( isset( $screen->base ) && in_array( $screen->base, $admin_scripts_bases ) ) ) {
+            return;
+        }
+        $dependency = array( 'lodash', 'wp-api-fetch', 'wp-i18n', 'wp-components', 'wp-element');
+
+        wp_enqueue_script( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/index.js', $dependency, $this->version, true );
+
+        wp_enqueue_style( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/style-index.css', array('wp-components'), $this->version );
+
+        $localize = array(
+            'version' => $this->version,
+            'root_id' => $this->plugin_name,
+        );
+        wp_set_script_translations( $this->plugin_name, $this->plugin_name );
+        wp_localize_script( $this->plugin_name, 'wpReactPluginBoilerplateBuild', $localize );
+    }
 }
