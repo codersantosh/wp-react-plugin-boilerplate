@@ -153,6 +153,20 @@ class Wp_React_Plugin_Boilerplate_Admin {
 
         register_rest_route(
             $namespace,
+            '/set_settings',
+            array(
+                array(
+                    'methods'             => \WP_REST_Server::EDITABLE,
+                    'callback'            => array( $this, 'set_settings' ),
+                    'permission_callback' => function () {
+                        return current_user_can( 'manage_options' );
+                    },
+                ),
+            )
+        );
+
+        register_rest_route(
+            $namespace,
             '/get_settings',
             array(
                 array(
@@ -164,6 +178,25 @@ class Wp_React_Plugin_Boilerplate_Admin {
                 ),
             )
         );
+    }
+
+    /**
+     * Set Plugin Settings.
+     *
+     * @since 1.0.0
+     *
+     * @param WP_REST_Request $request Full details about the request.
+     *
+     * @return array|WP_REST_Response Plugin Settings.
+     */
+    public function set_settings( \WP_REST_Request $request ) {
+        $params = $request->get_params();
+        if ( isset( $params['settings'] ) ) {
+            wp_react_plugin_boilerplate_delete_options();
+            wp_react_plugin_boilerplate_set_options( $params['settings'] );
+        }
+        return rest_ensure_response( wp_react_plugin_boilerplate_get_options() );
+
     }
 
     /**

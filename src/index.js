@@ -62,6 +62,16 @@ const AddSettings = () => {
 		}
 	}
 
+	async function setSettings(){
+		let data = await apiFetch({
+			path: wpReactPluginBoilerplateBuild.rest.namespace+ wpReactPluginBoilerplateBuild.rest.version+'/set_settings',
+			method: 'POST',
+			data: {
+				settings: allSetting,
+			}
+		});
+	}
+
 	const setStateSettings = (key, val) => {
 		let newSetting = Object.assign({}, allSetting );
 		newSetting[key] = val;
@@ -99,7 +109,7 @@ const AddSettings = () => {
 				<Button
 					className="button"
 					onClick={() =>{
-						console.log('Save Setting')
+						setSettings()
 					}}
 					isPrimary
 				>
