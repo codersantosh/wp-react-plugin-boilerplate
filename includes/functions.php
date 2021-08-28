@@ -19,6 +19,7 @@ if ( ! function_exists( 'wp_react_plugin_boilerplate_default_options' ) ) :
 			'setting_3' => false,
 			'setting_4' => true,
 			'setting_5' => 'option-1',
+			'excerpt_length' => 100,
 		);
 
 		return apply_filters( 'wp_react_plugin_boilerplate_default_options', $default_theme_options );
@@ -118,6 +119,11 @@ if ( ! function_exists( 'wp_react_plugin_boilerplate_set_options' ) ) :
 					'setting_4' == $key
 				) {
                     $value =  (bool) $value;
+                }
+                elseif (
+                    'excerpt_length' == $key
+                ) {
+                    $value =  absint($value);
                 } else {
 					$value = sanitize_key( $value );
 				}

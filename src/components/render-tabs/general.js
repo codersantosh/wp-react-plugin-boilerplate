@@ -22,6 +22,19 @@ export const RenderGeneral = (props) => {
 		<Fragment>
 			<CardBody>
 				<TextControl
+					label={__('Excerpt Length','wp-react-plugin-boilerplate')}
+					placeholder={__('Enter Number','wp-react-plugin-boilerplate')}
+					type='number'
+					value={settings && settings['excerpt_length']}
+					onChange={newVal =>
+						setSetting('excerpt_length',newVal)
+					}
+				/>
+			</CardBody>
+			<CardDivider />
+
+			<CardBody>
+				<TextControl
 					label={__('Setting 1','wp-react-plugin-boilerplate')}
 					placeholder={__('Enter Text','wp-react-plugin-boilerplate')}
 					value={settings && settings['setting_1']}

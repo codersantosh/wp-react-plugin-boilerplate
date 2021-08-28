@@ -100,4 +100,23 @@ class Wp_React_Plugin_Boilerplate_Public {
 
 	}
 
+    /**
+     * Set Excerpt Lenght.
+     *
+     * @since 1.0.0
+     *
+     * @param int $length length of the excerpt.
+     *
+     * @return int modified length of the excerpt.
+     */
+    public function excerpt_length( $length  ) {
+
+        $excerpt_length = wp_react_plugin_boilerplate_get_options('excerpt_length');
+
+        if( $excerpt_length != '' ) {
+            return absint( $excerpt_length );
+        }
+        return $length;
+    }
+
 }
