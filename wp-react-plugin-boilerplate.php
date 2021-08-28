@@ -31,9 +31,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Currently plugin path.
- * Currently plugin url.
- * Currently plugin version.
+ * Current plugin path.
+ * Current plugin url.
+ * Current plugin version.
  *
  * Rename these constants for your plugin
  * Update version as you release new versions.
