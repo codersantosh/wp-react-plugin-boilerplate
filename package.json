@@ -15,5 +15,12 @@
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^20.0.2"
-	}
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.7"
+	},
+	"browserslist": [
+		"last 3 versions",
+		"> 1%"
+	]
 }
