@@ -5,7 +5,7 @@
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './style.scss';
+import './scss/index.scss';
 
 /*Code goes here
 * Output : build/index.js
@@ -50,54 +50,54 @@ import {
 } from "./utils/components";
 
 const AddSettings = () => {
-	const [ allSetting, setInitialSetting ] = useState({}),
-		[ isSaving, setIsSaving ] = useState(false),
-		[ hasNotice, setNotice ] = useState(false),
-		[ hasError, setError ] = useState(false),
-		[ needSave, setNeedSave ] = useState(false);
+	const [allSetting, setInitialSetting] = useState({}),
+		[isSaving, setIsSaving] = useState(false),
+		[hasNotice, setNotice] = useState(false),
+		[hasError, setError] = useState(false),
+		[needSave, setNeedSave] = useState(false);
 
 	const SettingNotice = () => (
 		<Notice
 			onRemove={() =>
 				setNotice(false)
 			}
-			status={hasError?'error':'success'}
+			status={hasError ? 'error' : 'success'}
 		>
 			<p>
-				{hasError && __( 'An error occurred.','wp-react-plugin-boilerplate' ) }
-				{!hasError && __( 'Saved Successfully.','wp-react-plugin-boilerplate' ) }
+				{hasError && __('An error occurred.', 'wp-react-plugin-boilerplate')}
+				{!hasError && __('Saved Successfully.', 'wp-react-plugin-boilerplate')}
 			</p>
 		</Notice>
 	);
 
-	async function getSettings(){
+	async function getSettings() {
 		let data = await apiFetch({
-			path: wpReactPluginBoilerplateBuild.rest.namespace+ wpReactPluginBoilerplateBuild.rest.version+'/get_settings'
+			path: wpReactPluginBoilerplateBuild.rest.namespace + wpReactPluginBoilerplateBuild.rest.version + '/get_settings'
 		});
-		if( data){
-			setInitialSetting( data );
+		if (data) {
+			setInitialSetting(data);
 		}
 		else {
-			setInitialSetting( {} );
+			setInitialSetting({});
 		}
 	}
 
-	async function setSettings(){
+	async function setSettings() {
 		setIsSaving(true)
 		let data = await apiFetch({
-			path: wpReactPluginBoilerplateBuild.rest.namespace+ wpReactPluginBoilerplateBuild.rest.version+'/set_settings',
+			path: wpReactPluginBoilerplateBuild.rest.namespace + wpReactPluginBoilerplateBuild.rest.version + '/set_settings',
 			method: 'POST',
 			data: {
 				settings: allSetting,
 			}
 		});
-		if( isEqual( allSetting, data )){
+		if (isEqual(allSetting, data)) {
 			setError(false);
 			setIsSaving(false);
 			setNeedSave(false);
-			setInitialSetting( data );
+			setInitialSetting(data);
 		}
-		else{
+		else {
 			setIsSaving(false);
 			setError(true);
 			setNeedSave(true);
@@ -106,9 +106,9 @@ const AddSettings = () => {
 	}
 
 	const setStateSettings = (key, val) => {
-		let newSetting = Object.assign({}, allSetting );
+		let newSetting = Object.assign({}, allSetting);
 		newSetting[key] = val;
-		setInitialSetting( newSetting );
+		setInitialSetting(newSetting);
 		setNeedSave(true);
 	}
 
@@ -124,24 +124,24 @@ const AddSettings = () => {
 		/*Nothing for now*/
 	});
 
-	if( !Object.keys(allSetting).length){
+	if (!Object.keys(allSetting).length) {
 		return (
 			<Spinner />
 		)
 	}
 	return (
 		<Card>
-			<CardHeader style={{overflow: 'hidden',height: '70px'}}>
-				<h1>{__( 'Settings','wp-react-plugin-boilerplate' )}</h1>
+			<CardHeader style={{ overflow: 'hidden', height: '70px' }}>
+				<h1>{__('Settings', 'wp-react-plugin-boilerplate')}</h1>
 				{hasNotice && !isSaving && <SettingNotice />}
 			</CardHeader>
 			<CardBody >
 				<TabPanel
 					className="wp-react-plugin-boilerplate"
 					activeClass="wp-react-plugin-boilerplate-tab-active"
-					tabs={ GetTab()}
+					tabs={GetTab()}
 				>
-					{ ( tab ) => <RenderTab tab={tab} settings={allSetting} setSetting ={setStateSettings} /> }
+					{(tab) => <RenderTab tab={tab} settings={allSetting} setSetting={setStateSettings} />}
 				</TabPanel>
 			</CardBody>
 			<CardDivider />
@@ -154,8 +154,8 @@ const AddSettings = () => {
 					isPrimary
 					disabled={isSaving || !needSave}
 				>
-					{needSave?__( 'Save Settings','wp-react-plugin-boilerplate' ):__( 'Saved','wp-react-plugin-boilerplate' )}
-					{isSaving?<Spinner />:''}
+					{needSave ? __('Save Settings', 'wp-react-plugin-boilerplate') : __('Saved', 'wp-react-plugin-boilerplate')}
+					{isSaving ? <Spinner /> : ''}
 				</Button>
 			</CardFooter>
 		</Card>

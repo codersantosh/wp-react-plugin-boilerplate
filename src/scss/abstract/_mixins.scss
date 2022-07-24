@@ -1,0 +1,150 @@
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Box sizing
+  -------------------------------------------------------------------------- */
+
+@mixin boxSizing() {
+
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Font rendering
+  -------------------------------------------------------------------------- */
+
+@mixin fontRendering() {
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Transation delay
+  -------------------------------------------------------------------------- */
+
+@mixin transationDelay ($value) {
+
+    transition: all $value ease;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Flex
+  -------------------------------------------------------------------------- */
+
+@mixin flex() {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Grid
+  -------------------------------------------------------------------------- */
+
+@mixin grid() {
+
+    display: grid;
+}
+
+@mixin gridColumns($columns) {
+
+  @if $columns == 1 {
+      grid-template-columns: repeat(1, 1fr);
+  }
+  @else if $columns == 2 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  @else if $columns == 3 {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  @else if $columns == 4 {
+      grid-template-columns: repeat(4, 1fr);
+  }
+  @else if $columns == 5 {
+      grid-template-columns: repeat(5, 1fr);
+  }
+  @else if $columns == 6 {
+      grid-template-columns: repeat(6, 1fr);
+  }
+  @else {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Visibility
+  -------------------------------------------------------------------------- */
+
+@mixin visibilityVisible() {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin visibilityHidden() {
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Clearfix
+  -------------------------------------------------------------------------- */
+
+@mixin clearfix() {
+
+  &::before,
+	&::after {
+
+		content: "";
+		display: table;
+	}
+
+	&::after {
+
+		clear: both;
+	}
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Breakpoints
+  -------------------------------------------------------------------------- */
+
+@mixin breakpoint($point) {
+  /* Wide */
+  @if $point == wide {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  }
+  /* Ipad Pro */
+  @else if $point == ipadpro {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  /* Medium */
+  @else if $point == medium {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+  /* Ipad */
+  @else if $point == ipad {
+    @media ( max-width: 768px ) {
+      @content;
+    }
+  }
+  /* Mobile */
+  @else if $point == mobile {
+    @media ( max-width: 575px ) {
+      @content;
+    }
+  }
+}
