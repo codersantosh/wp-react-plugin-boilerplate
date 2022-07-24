@@ -13,6 +13,9 @@ export const fetchSettings = async () => {
         });
     } catch (error) {
         console.log('fetchSettings Errors:', error);
+        return {
+            wp_react_plugin_boilerplate_options_fetch_settings_errors : true
+        }
     }
     if( options.wp_react_plugin_boilerplate_options){
         return options.wp_react_plugin_boilerplate_options;
@@ -37,6 +40,9 @@ export const updateSettings = async (data) => {
         });
     } catch (error) {
         console.log('updateSettings Errors:', error);
+        return {
+            wp_react_plugin_boilerplate_options_update_settings_errors : true
+        }
     }
     if( options.wp_react_plugin_boilerplate_options){
         return options.wp_react_plugin_boilerplate_options;

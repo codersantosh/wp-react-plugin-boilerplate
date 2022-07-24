@@ -7,20 +7,19 @@ import {Notice} from "@wordpress/components";
 import { SettingsContext } from '../../../context/SettingsContext.js';
 
 const SettingsNotice = () => {
-    const { useHasError, useUpdateState } = useContext(SettingsContext);
+    const { useNotice, useHasError, useUpdateState } = useContext(SettingsContext);
     return (
         <Notice
             onRemove={() =>
                 useUpdateState({
                     notice : '',
-                    useHasError : false,
+                    hasError : false,
                 })
             }
             status={useHasError?'error':'success'}
         >
             <p>
-                {useHasError && __( 'An error occurred.','wp-react-plugin-boilerplate' ) }
-                {!useHasError && __( 'Saved Successfully.','wp-react-plugin-boilerplate' ) }
+                {useNotice}
             </p>
         </Notice>
     )
