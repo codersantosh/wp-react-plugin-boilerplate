@@ -42,24 +42,6 @@ class Wp_React_Plugin_Boilerplate_Admin {
 	 */
 	private $version;
 
-    /**
-     * The Rest route namespace.
-     *
-     * @since    1.0.0
-     * @access   private
-     * @var      string    $namespace    The Rest route namespace.
-     */
-    private $namespace = 'wp-react-plugin-boilerplate-setting-api/';
-
-    /**
-     * The rest version of this plugin.
-     *
-     * @since    1.0.0
-     * @access   private
-     * @var      string    $rest_version    The rest version of this plugin..
-     */
-    private $rest_version = 'v1';
-
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -125,90 +107,87 @@ class Wp_React_Plugin_Boilerplate_Admin {
 		if ( ! ( isset( $screen->base ) && in_array( $screen->base, $admin_scripts_bases ) ) ) {
 			return;
 		}
-		$dependency = array( 'lodash', 'wp-api-fetch', 'wp-i18n', 'wp-components', 'wp-element');
 
-		wp_enqueue_script( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/index.js', $dependency, $this->version, true );
+        /*Scripts dependency files*/
+        $deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/admin/settings.asset.php';
 
-		wp_enqueue_style( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/style-index.css', array('wp-components'), $this->version );
+        /*Fallback dependency array*/
+        $dependency = [];
+        $version = $this->version;
+
+        /*Set dependency and version*/
+        if ( file_exists( $deps_file ) ) {
+            $deps_file = require( $deps_file );
+            $dependency      = $deps_file['dependencies'];
+            $version      = $deps_file['version'];
+        }
+
+
+		wp_enqueue_script( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/settings.js', $dependency, $version, true );
+
+		wp_enqueue_style( $this->plugin_name, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/style-settings.css', array('wp-components'), $version );
 
 		$localize = array(
 			'version' => $this->version,
 			'root_id' => $this->plugin_name,
-			'rest'    => array(
-				'namespace' => $this->namespace,
-				'version'   => $this->rest_version,
-			),
 		);
         wp_set_script_translations( $this->plugin_name, $this->plugin_name );
 		wp_localize_script( $this->plugin_name, 'wpReactPluginBoilerplateBuild', $localize );
 	}
 
+
     /**
-     * Register REST API route.
+     * Register settings.
+     * Common callback function of rest_api_init and admin_init
+     * Schema: http://json-schema.org/draft-04/schema#
      *
-     * @since    1.0.0
+     * Add your own settings fields here
+     *
+     * @since 1.0.0
+     *
+     * @param null.
+     * @return void
      */
-	public function api_init() {
-		$namespace = $this->namespace . $this->rest_version;
-
-		register_rest_route(
-			$namespace,
-			'/set_settings',
-			array(
-				array(
-					'methods'             => \WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'set_settings' ),
-					'permission_callback' => function () {
-						return current_user_can( 'manage_options' );
-					},
-				),
-			)
-		);
-		register_rest_route(
-			$namespace,
-			'/get_settings',
-			array(
-				array(
-					'methods'             => \WP_REST_Server::READABLE,
-					'callback'            => array( $this, 'get_settings' ),
-					'permission_callback' => function () {
-						return current_user_can( 'manage_options' );
-					},
-				),
-			)
-		);
-	}
-
-
-	/**
-	 * Set Plugin Settings.
-	 *
-	 * @since 1.0.0
-     *
-	 * @param WP_REST_Request $request Full details about the request.
-     *
-	 * @return array|WP_REST_Response Plugin Settings.
-	 */
-	public function set_settings( \WP_REST_Request $request ) {
-		$params = $request->get_params();
-		if ( isset( $params['settings'] ) ) {
-			wp_react_plugin_boilerplate_delete_options();
-			wp_react_plugin_boilerplate_set_options( $params['settings'] );
-		}
-		return rest_ensure_response( wp_react_plugin_boilerplate_get_options() );
-
-	}
-
-	/**
-	 * Get settings
-	 *
-	 * @since 1.0.0
-     *
-	 * @param WP_REST_Request $request Full details about the request.
-     *
-     * @return array|WP_REST_Response Plugin Settings.
-	 */
-	public function get_settings( \WP_REST_Request $request ) {
-		return rest_ensure_response( wp_react_plugin_boilerplate_get_options() );
-	}
+    public function register_settings() {
+        $defaults = wp_react_plugin_boilerplate_default_options();
+        register_setting(
+            'wp_react_plugin_boilerplate_settings_group',
+            'wp_react_plugin_boilerplate_options',
+            array(
+                'type'         => 'object',
+                'default'      => $defaults,
+                'show_in_rest' => array(
+                    'schema' => array(
+                        'type'       => 'object',
+                        'properties' => array(
+                            /*===Settings===*/
+                            /*Settings -> General*/
+                            'setting_1' => array(
+                                'type' => 'string',
+                                'default' => $defaults['setting_1']
+                            ),
+                            'setting_2' => array(
+                                'type' => 'string',
+                                'default' => $defaults['setting_2']
+                            ),
+                            /*Settings -> Advanced*/
+                            'setting_3' => array(
+                                'type' => 'boolean',
+                                'default' => $defaults['setting_3']
+                            ),
+                            'setting_4' => array(
+                                'type' => 'boolean',
+                                'default' => $defaults['setting_4']
+                            ),
+                            'setting_5' => array(
+                                'type' => 'string',
+                                'default' => $defaults['setting_5'],
+                                'sanitize_callback' => 'sanitize_key',
+                            ),
+                        ),
+                    ),
+                ),
+            )
+        );
+    }
 }
