@@ -141,6 +141,8 @@ class Wp_React_Plugin_Boilerplate_Admin {
      * Common callback function of rest_api_init and admin_init
      * Schema: http://json-schema.org/draft-04/schema#
      *
+     * Add your own settings fields here
+     *
      * @since 1.0.0
      *
      * @param null.
