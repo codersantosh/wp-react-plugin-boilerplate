@@ -1,8 +1,10 @@
+/*WordPress*/
+import {__} from "@wordpress/i18n";
+
 /*Reducer for Settings*/
 const SettingsReducer = (state, action) => {
 
     let newState = Object.assign({}, state);
-    console.log(action)
 
     switch (action.type) {
 
@@ -11,14 +13,30 @@ const SettingsReducer = (state, action) => {
             newState.stateSettings = action.payload.stateSettings;
             newState.isPending = false;
             newState.canSave = false;
+
+            if( typeof action.payload.fetchedSettings.wp_react_plugin_boilerplate_options_fetch_settings_errors !== 'undefined'){
+                newState.notice = __('An error occurred.','wp-react-plugin-boilerplate');
+                newState.hasError = true;
+            }
             break;
 
         case 'UPDATE_SETTINGS':
             newState.fetchedSettings = action.payload.fetchedSettings;
             newState.stateSettings = action.payload.stateSettings;
             newState.isPending = false;
-            newState.canSave = false;
-            newState.canSave = false;
+
+            let canSave = false,
+                notice = __('Saved Successfully.','wp-react-plugin-boilerplate'),
+                hasError = false;
+            if( typeof action.payload.fetchedSettings.wp_react_plugin_boilerplate_options_update_settings_errors !== 'undefined'){
+                canSave = true;
+                notice = __('An error occurred.','wp-react-plugin-boilerplate');
+                hasError = true;
+            }
+
+            newState.canSave = canSave;
+            newState.notice = notice;
+            newState.hasError = hasError;
             break;
 
         case 'UPDATE_STATE':
@@ -31,7 +49,7 @@ const SettingsReducer = (state, action) => {
             if( typeof action.payload.isPending !== 'undefined' ){
                 newState.isPending = action.payload.isPending;
             }
-            if( action.payload.notice){
+            if( typeof action.payload.notice !== 'undefined' ){
                 newState.notice = action.payload.notice;
             }
             if( typeof action.payload.hasError !== 'undefined' ){
