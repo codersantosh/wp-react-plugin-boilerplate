@@ -34,7 +34,7 @@ const SettingRouters = () => {
         )
     }
     return  (
-        <Card>
+        <Card className = 'wp-react-plugin-boilerplate'>
             <Header />
             <Routes>
                 <Route exact path='/general' element={<General />} />
