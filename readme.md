@@ -106,7 +106,8 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
    ├── admin
    |  └── settings
    |     ├── atoms
-   |     |   └── nav.js
+   |     |   ├── navlist.js
+   |     |   └── save-btn.js
    |     ├── molecules
    |     |   ├── navlist.js
    |     |   └── notice.js
