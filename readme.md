@@ -70,16 +70,18 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 |  └── partials
 |     └── your-renamed-plugin-admin-display.php
 |
-├── build
-|  ├── index.asset.php
-|  ├── index.js
-|  └── style-index.css
+├── build(auto created via NPM)
+|  └── admin
+|     ├── settings.asset.php
+|     ├── settings.js
+|     └── style-settings.css
 |
 ├── includes
 |  ├── class-your-renamed-plugin.php
 |  ├── class-your-renamed-plugin-activator.php
 |  ├── class-your-renamed-plugin-deactivator.php
 |  ├── class-your-renamed-plugin-i18n.php
+|  ├── class-your-renamed-plugin-include.php
 |  ├── class-your-renamed-plugin-loader.php
 |  ├── functions.php
 |  └── index.php
@@ -91,28 +93,43 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 |  |  ├── class-your-renamed-plugin-public.php
 |  |  └── index.php
 |  |
-|  └── css
+|  ├── css
 |  |  └── your-renamed-plugin-public.css
 |  |
-|  └── js
+|  ├── js
 |  |  └── your-renamed-plugin-public.js
 |  |
 |  └── partials
 |     └── your-renamed-plugin-public-display.php
 |
 └── src
-   ├── components
-   |  ├── render-tabs
-   |  |  ├── advanced.js
-   |  |  └── general.js
-   |  |
-   |  └── tabs.js
+   ├── admin
+   |  └── settings
+   |     ├── atoms
+   |     |   └── nav.js
+   |     ├── molecules
+   |     |   ├── navlist.js
+   |     |   └── notice.js
+   |     ├── organisms
+   |     |   ├── footer.js
+   |     |   └── header.js
+   |     ├── pages
+   |     |   ├── advanced.js
+   |     |   └── general.js
+   |     ├── utils
+   |     |    └── get-nav.js
+   |     ├── routes.js
+   |     └── style.scss
+   |  
    |
-   ├── utils
-   |  └── components.js
+   ├── api
+   |  └── settings.js
+   ├── context
+   |  └── SettingsContext.js
+   ├── reducer
+   |  └── settings-reducer.js
    |
-   ├── index.js
-   └── style.scss
+   └── settings.js
 ```
 
 ## Changelog
