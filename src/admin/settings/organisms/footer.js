@@ -1,16 +1,10 @@
-/*WordPress*/
-import {
-    CardFooter
-} from "@wordpress/components";
-
-/*Inbuilt Components*/
-import SaveBtn from "../atoms/save-btn";
-
 const SettingsFooter = () => {
     return (
-        <CardFooter>
-            <SaveBtn />
-        </CardFooter>
+        <footer className="wp-react-plugin-boilerplate-footer">
+            <p>
+                WP React Plugin Boilerplate 
+            </p>
+       </footer>
     );
 };
 

@@ -1,12 +1,9 @@
 /*WordPress*/
 import {
     useContext,
-    Fragment
 } from "@wordpress/element";
 import {__} from "@wordpress/i18n";
 import {
-    CardBody,
-    CardDivider,
     TextControl
 } from "@wordpress/components";
 
@@ -17,8 +14,8 @@ const General = () => {
     const { useSettings, useUpdateStateSettings } = useContext(SettingsContext);
 
     return (
-        <Fragment>
-            <CardBody>
+        <>
+            <div className="wp-react-plugin-boilerplate-field-wrap">
                 <TextControl
                     label={__('Setting 1','wp-react-plugin-boilerplate')}
                     placeholder={__('Enter Text','wp-react-plugin-boilerplate')}
@@ -27,11 +24,9 @@ const General = () => {
                         useUpdateStateSettings('setting_1',newVal)
                     }
                 />
-            </CardBody>
-            <CardDivider />
-            <CardBody
-                isShady
-            >
+            </div>
+
+            <div className="wp-react-plugin-boilerplate-field-wrap">
                 <TextControl
                     label={__('Setting 2','wp-react-plugin-boilerplate')}
                     placeholder={__('Enter Another Text','wp-react-plugin-boilerplate')}
@@ -40,9 +35,8 @@ const General = () => {
                         useUpdateStateSettings('setting_2',newVal)
                     }
                 />
-            </CardBody>
-            <CardDivider />
-        </Fragment>
+            </div>
+        </>
     )
 }
 

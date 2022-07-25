@@ -10,7 +10,6 @@ import {
 } from '@wordpress/element';
 
 import {
-    Card,
     Spinner,
 } from "@wordpress/components";
 
@@ -28,24 +27,28 @@ import Footer from "./organisms/footer";
 
 const SettingRouters = () => {
     const { useSettings } = useContext(SettingsContext);
+  
     if (!Object.keys(useSettings).length) {
         return (
-            <Spinner />
+            <Spinner className="wp-react-plugin-boilerplate-page-loader" />
         )
     }
     return  (
-        <Card className = 'wp-react-plugin-boilerplate'>
+        <div className='wp-react-plugin-boilerplate'>
             <Header />
-            <Routes>
-                <Route exact path='/general' element={<General />} />
-                <Route exact path={'/advanced'} element={<Advanced />} />
+            <main className='wp-react-plugin-boilerplate-main'>
+                <Routes>
+                    <Route exact path='/general' element={<General />} />
+                    <Route exact path={'/advanced'} element={<Advanced />} />
 
-                <Route path="/" element={<Navigate replace to={'/general'} />} />
-            </Routes>
+                    <Route path="/" element={<Navigate replace to={'/general'} />} />
+                </Routes>
+            </main>
             <Footer />
-        </Card>
+        </div>
     )
 }
+
 const InitSettings = () => {
     return  (
         <HashRouter basename="/">

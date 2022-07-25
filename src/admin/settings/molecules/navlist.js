@@ -6,8 +6,8 @@ import Nav from "../atoms/nav";
 
 const Navlist = () => {
     return (
-        <nav>
-            <ul>
+        <nav className="wp-react-plugin-boilerplate-navigation">
+            <ul className="at-flex">
                 {getNav.map(function (item){
                     return (
                         <Nav
