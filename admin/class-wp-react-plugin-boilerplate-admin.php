@@ -108,6 +108,19 @@ class Wp_React_Plugin_Boilerplate_Admin {
 			return;
 		}
 
+        wp_enqueue_style( 'at-grid', WP_REACT_PLUGIN_BOILERPLATE_PATH . 'assets/lib/at-grid/css/at-grid.min.css', array(), $this->version );
+
+        $at_grid_css_var = "
+            :root{
+                --at-container-sm: 540px;
+                --at-container-md: 720px;
+                --at-container-lg: 960px;
+                --at-container-xl: 1140px;
+                --at-gutter:15px;
+            }
+        ";
+        wp_add_inline_style( 'at-grid', $at_grid_css_var );
+
         /*Scripts dependency files*/
         $deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/admin/settings.asset.php';
 
