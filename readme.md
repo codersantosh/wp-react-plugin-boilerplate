@@ -144,7 +144,7 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 * Added: Settings via register_setting
 * Updated: UI and UX
 * Removed: Custom API and Custom Sanitization Functions
-* 
+
 ### 1.0.0
 * Initial Release
 
