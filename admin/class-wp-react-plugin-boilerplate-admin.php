@@ -108,7 +108,7 @@ class Wp_React_Plugin_Boilerplate_Admin {
 			return;
 		}
 
-        wp_enqueue_style( 'at-grid', WP_REACT_PLUGIN_BOILERPLATE_PATH . 'assets/lib/at-grid/css/at-grid.min.css', array(), $this->version );
+        wp_enqueue_style( 'at-grid', WP_REACT_PLUGIN_BOILERPLATE_URL. 'assets/library/at-grid/at-grid.min.css', array(), $this->version );
 
         $at_grid_css_var = "
             :root{

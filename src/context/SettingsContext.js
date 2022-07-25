@@ -64,6 +64,15 @@ const SettingsContextProvider = (props) => {
 
     /*Update Settings*/
     const useUpdateSettings = async () => {
+
+        /*Reducer state on UPDATE_SETTINGS_BEFORE*/
+        dispatch({
+            type: 'UPDATE_SETTINGS_BEFORE',
+            payload: {
+                isPending: true,
+            },
+        });
+
         const updatedSettings = await updateSettings(state.stateSettings);
 
         /*Reducer state on UPDATE_SETTINGS*/

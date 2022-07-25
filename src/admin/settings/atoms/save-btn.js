@@ -2,7 +2,8 @@
 import {useContext} from "@wordpress/element";
 import {__} from "@wordpress/i18n";
 import {
-    Button
+    Button,
+    Spinner
 } from "@wordpress/components";
 
 /*Inbuilt Context*/
@@ -10,7 +11,7 @@ import { SettingsContext } from '../../../context/SettingsContext';
 
 const SaveBtn = ({to, title}) => {
 
-    const { useUpdateSettings, isPending, useCanSave } = useContext(SettingsContext);
+    const { useUpdateSettings, useIsPending, useCanSave } = useContext(SettingsContext);
 
     return (
         <Button
@@ -19,10 +20,10 @@ const SaveBtn = ({to, title}) => {
                 useUpdateSettings()
             }
             isPrimary
-            disabled={isPending || !useCanSave}
+            disabled={useIsPending || !useCanSave}
         >
             {useCanSave?__( 'Save Settings','wp-react-plugin-boilerplate' ):__( 'Saved','wp-react-plugin-boilerplate' )}
-            {isPending?<Spinner />:''}
+            {useIsPending ? <Spinner /> : ''}
         </Button>
     );
 }

@@ -20,6 +20,10 @@ const SettingsReducer = (state, action) => {
             }
             break;
 
+        case 'UPDATE_SETTINGS_BEFORE':
+            newState.isPending = action.payload.isPending;
+            break;
+
         case 'UPDATE_SETTINGS':
             newState.fetchedSettings = action.payload.fetchedSettings;
             newState.stateSettings = action.payload.stateSettings;

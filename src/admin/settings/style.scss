@@ -1,127 +1,135 @@
 /**
  * Replace them with your own styles or remove the file completely.
  */
-#wp-react-plugin-boilerplate {
-	.components {
-		&-tab-panel {
-			&__tabs {
-				margin-bottom: -1px;
-				.components-button {
-					border-width: 1px;
-					border-color: #ddd;
+
+//variables
+$prefixClass:'wp-react-plugin-boilerplate';
+ $white:#fff;
+ $header-left-space:180px;
+ $borderColor:#c3c4c7;
+ $textColor:#1d2327;
+ $navItemActiveColor:#646970;
+ $navItemGapBetween:25px;
+
+.#{wp-react-plugin-boilerplate}{
+	margin-right: 20px;
+	margin-top: 100px;
+	*{
+		box-sizing: border-box;
+	}
+	&-main{
+		min-height:100vh;
+	}
+	&-header{
+		background-color: $white;
+		margin-left: -20px;
+		padding    : 10px 20px;
+
+		&-sticky{
+			position: fixed;
+			width:auto;
+			left: $header-left-space;
+			right: 0;
+			top: 32px;
+			z-index: 2;
+			
+		}
+	}
+	&-navigation{
+		
+		padding   : 0 10px;
+		width     : 100%;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+		border    : 1px solid $borderColor;
+		background: $white;
+		ul{
+			gap: $navItemGapBetween;
+			margin: 0;
+			padding: 0 15px;
+			li{
+				margin: 0;
+				padding: 0;
+
+				a{
+					padding: 15px 0;
+					border-width: 0 0 4px 0;
 					border-style: solid;
-					font-size: 14px;
+					border-color: transparent;
+					display: inline-block;
+					text-decoration: none;
+					color:$textColor;
+					opacity: 0.5;
 					font-weight: 600;
-					color: #444;
-					&:focus {
+					transition : all 0.5s ease-in-out 0s;
+					box-shadow: none;
+					&:hover,
+					&:focus{
+						opacity: 1;
 						box-shadow: none;
+						outline: 0;
 					}
-					&:not(:last-of-type) {
-						margin-right: 10px;
-					}
-					&:not(.wp-react-plugin-boilerplate-tab-active) {
-						background: #f5f5f5;
-					}
-					&.wp-react-plugin-boilerplate-tab-active {
-						background: #fff;
-						border-color: #007cba #ddd #fff #ddd;
-						border-width: 2px 1px 2px 1px;
-					}
-				}
-			}
-			&__tabs-item {
-				background: transparent;
-				border: none;
-				box-shadow: none;
-				border-radius: 0;
-				cursor: pointer;
-				height: 48px;
-				padding: 3px 16px;
-				margin-left: 0;
-				font-weight: 500;
-				transition: box-shadow .1s linear;
-				box-sizing: border-box;
-			}
-			&__tab-content {
-				border: 1px solid #ddd;
-				.components-base-control {
-					&__label {
-						margin-bottom: 20px;
-						margin-top: 8px;
-						display: block;
-						font-size: 16px;
-						font-weight: 600;
-					}
-				}
-				.components-card {
-					&__body {
-						.components {
-							&-panel {
-								&__body {
-									&-title {
-										.components-button {
-											font-weight: 600;
-											font-size: 14px;
-										}
-									}
-								}
-							}
-							&-base {
-								&-control {
-									&__label {
-										font-size: 13px;
-									}
-								}
-							}
+					&.#{wp-react-plugin-boilerplate}{
+						&-nav-active {
+							border-color: $navItemActiveColor;
+							opacity: 1;
 						}
 					}
 				}
 			}
 		}
-		&-button {
-			margin-bottom: 0;
-		}
-		&-toggle-control__label {
-			font-weight: 600;
-			font-size: 14px;
-		}
-		&-input-control__container,
-		&-text-control__input {
-			width: 50%;
-		}
-		&-select-control__input,
-		&-text-control__input {
-			height: 45px !important;
-		}
-		&-toggle-control {
-			margin-bottom: 20px;
-			.components {
-				&-base {
-					&-control {
-						&__help {
-							padding-left: 47px;
+	}
+	&-field{
+		&-wrap{
+			background: $white;
+			border:1px solid  $borderColor;
+			padding: 20px;
+			margin-block-start: 30px;
+
+			 .components{
+				&-base{
+					&-control{
+						&__label{
+							font-weight: 600;
 						}
 					}
 				}
+			 }
+		}
+	}
+	&-footer{
+		p{
+
+		font-size  : 14px;
+		font-weight: 600;
+		
+		}
+	}
+	&-notice{
+		margin: 0;
+		padding-right: 20px !important;
+		width: 300px;
+		.components-notice__content{
+			p{
+				margin: 0;
 			}
 		}
-		&-panel {
-			&__body {
-				&.is-opened {
-					background: #fff;
-					border: 1px solid #ddd;
-					.components {
-						&-panel__body-title {
-							border-bottom: 1px solid #ddd;
-							background: #f3f4f5;
-							margin: -16px -16px 15px -16px;
-						}
-						&-base-control {
-							margin-bottom: 20px;
-						}
-					}
-				}
-			}
+	}
+	&-page-loader{
+		
+		position : fixed !important;
+		top      : 50%;
+		left     : 50%;
+		transform: translate(-50%, -50%);
+		width    : 30px  !important;
+		height   : 30px !important;
+
+	}
+}
+
+body{
+	&.toplevel_page_wp-react-plugin-boilerplate{
+		#wpfooter{
+			display: none;
 		}
 	}
 }
