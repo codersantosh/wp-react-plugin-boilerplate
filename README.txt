@@ -37,5 +37,13 @@ Navigate to plugin files `/wp-content/plugins/wp-react-plugin-boilerplate/src` a
 
  == Changelog ==
 
+ = 1.0.1 =
+ Major Update
+ * Added: Uses React Router, Context, and Reducer
+ * Added: Atomic Design Methodology
+ * Added: [AT Grid](https://github.com/codersantosh/at-grid)
+ * Updated: Uses Inbuilt WordPress Settings API
+ * Updated: UI and UX
+
  = 1.0.0 =
  * Initial Release

@@ -106,7 +106,7 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
    ├── admin
    |  └── settings
    |     ├── atoms
-   |     |   ├── navlist.js
+   |     |   ├── nav.js
    |     |   └── save-btn.js
    |     ├── molecules
    |     |   ├── navlist.js
@@ -134,6 +134,17 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 ```
 
 ## Changelog
+
+### 1.0.1
+#### Major Update
+* Added: Uses React Router, Context, and Reducer
+* Added: Atomic Design Methodology
+* Added: [AT Grid](https://github.com/codersantosh/at-grid)
+* Added: Uses Inbuilt WordPress Settings API
+* Added: Settings via register_setting
+* Updated: UI and UX
+* Removed: Custom API and Custom Sanitization Functions
+* 
 ### 1.0.0
 * Initial Release
 
