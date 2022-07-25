@@ -102,7 +102,7 @@ class Wp_React_Plugin_Boilerplate_Loader {
 			'component'     => $component,
 			'callback'      => $callback,
 			'priority'      => $priority,
-			'accepted_args' => $accepted_args,
+			'accepted_args' => $accepted_args
 		);
 
 		return $hooks;

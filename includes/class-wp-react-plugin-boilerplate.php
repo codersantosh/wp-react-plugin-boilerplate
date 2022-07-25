@@ -196,10 +196,9 @@ class Wp_React_Plugin_Boilerplate {
 
 		$plugin_public = new Wp_React_Plugin_Boilerplate_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_public_resources' );
 
-	}
+    }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

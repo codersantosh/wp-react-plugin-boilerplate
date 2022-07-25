@@ -40,6 +40,15 @@ class Wp_React_Plugin_Boilerplate_Public {
 	 */
 	private $version;
 
+    /**
+     * Unique ID for this class.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $id    The ID of this class.
+     */
+    private $id;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -51,53 +60,29 @@ class Wp_React_Plugin_Boilerplate_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
+        $this->id     = $this->plugin_name.'-public';
 
 	}
 
 	/**
-	 * Register the stylesheets for the public-facing side of the site.
+	 * Register the JavaScript and stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_public_resources() {
+        /**
+         * This function is provided for demonstration purposes only.
+         *
+         * An instance of this class should be passed to the run() function
+         * defined in Wp_React_Plugin_Boilerplate_Loader as all of the hooks are defined
+         * in that particular class.
+         *
+         * The Wp_React_Plugin_Boilerplate_Loader will then create the relationship
+         * between the defined hooks and the functions defined in this
+         * class.
+         */
+		wp_enqueue_style( $this->id, WP_REACT_PLUGIN_BOILERPLATE_URL . 'public/css/wp-react-plugin-boilerplate-public.css', array(), $this->version, 'all' );
+        wp_enqueue_script( $this->id, WP_REACT_PLUGIN_BOILERPLATE_URL . 'public/js/wp-react-plugin-boilerplate-public.js', array( 'jquery' ), $this->version, false );
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_React_Plugin_Boilerplate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_React_Plugin_Boilerplate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-react-plugin-boilerplate-public.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Wp_React_Plugin_Boilerplate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Wp_React_Plugin_Boilerplate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-react-plugin-boilerplate-public.js', array( 'jquery' ), $this->version, false );
-
-	}
-
+    }
 }
