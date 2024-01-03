@@ -14,12 +14,12 @@
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^23.5.0"
+		"@wordpress/scripts": "^26.19.0",
+		"autoprefixer": "^10.4.7"
 	},
 	"dependencies": {
-		"@wordpress/components": "^19.15.0",
-		"@wordpress/url": "^3.14.0",
-		"autoprefixer": "^10.4.7",
+		"@wordpress/components": "^25.14.0",
+		"@wordpress/url": "^3.49.0",
 		"lodash": "^4.17.21",
 		"react-router-dom": "^6.3.0"
 	},
