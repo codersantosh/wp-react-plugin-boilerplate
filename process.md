@@ -3,13 +3,14 @@
 WP React Plugin Boilerplate is a starter WordPress plugin to develop WordPress Plugin via React and Rest API.
 
 ## Self Introduction
+![Santosh Kunwar](https://avatars.githubusercontent.com/u/7057447?s=48&v=4?raw=true)
 
 Santosh Kunwar, Founder/CEO at [Acme Themes](https://www.acmethemes.com/ ), [Acme Information Technology](https://www.acmeit.org/ ), and a popular Gutenberg Page Builder - [Gutentor]( https://wordpress.org/plugins/gutentor/  ) creator, who loves working on WordPress Themes, Plugins and recently on [Gutenberg Templates]( https://templateberg.com/gutenberg-templates/  ). A dynamic person who evolving with WordPress and has more than a decade of experience working with WordPress.
 WordPress Profile of [codersantosh](https://profiles.wordpress.org/codersantosh/)
 In short, I just love WordPress more…
 
 ## Output of Project
-![alt text](https://avatars.githubusercontent.com/u/7057447?s=48&v=4?raw=true)
+![WP React Plugin Boilerplate output](https://raw.githubusercontent.com/codersantosh/wp-react-plugin-boilerplate/master/assets/img/output.jpg)
 
 ## Basic Introduction to WordPress plugin
 
