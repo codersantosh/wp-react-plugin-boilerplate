@@ -19,6 +19,7 @@ This boilerplate provides a foundation for building modern WordPress plugins.
     - [2. Development Setup](#2-development-setup)
     - [3. Renaming the Plugin](#3-renaming-the-plugin)
     - [4. Activate the Plugin](#4-activate-the-plugin)
+    - [5. Start Customization and Coding](#5-start-customization-and-coding)
   - [Folder Information](#folder-information)
   - [Changelog](#changelog)
   - [Contributing](#contributing)
@@ -33,12 +34,58 @@ This boilerplate provides a foundation for building modern WordPress plugins.
   - Adjust the naming strings.
   - Run `npm run initial-rename`
 
-- **Language File Creation:** Generates .pot files from both JavaScript and PHP code.
+- **Language File Creation:** Generates `.pot` files from both JavaScript and PHP code.
 
 - **Deployment Command:**
 
   - Run `npm run deploy` to create a production-ready deploy folder.
   - Rename and upload this folder to your WordPress site or WordPress.org after thorough testing.
+
+- **Development Environment Setup:**
+
+  - Includes npm run start command to initialize React JS development environment with a live development server.
+
+- **Production Build:**
+
+  - Provides `npm run build` command to generate optimized production files for the plugin.
+
+- **REST API Integration:**
+
+  - Utilizes WordPress REST API for backend interactions, found in includes/api directory.
+
+- **[Utilizes Atrc (atrc) - Atomic React Components](https://github.com/codersantosh/atrc):**
+
+  - ATRC, or Atomic React Components, is integrated into the WP React Plugin Boilerplate to provide a structured approach to building React components.
+  - ATRC uses most of the features from core Gutenberg, enhancing compatibility and leveraging established Gutenberg functionality.
+  - It promotes component reusability and maintainability by breaking down UI elements into smaller, atomic components such as molecules, controls, and templates.
+  - It facilitates easy handling of WordPress API and data related to settings, posts, or any other data and API.
+
+- **[Utilizes Atomic CSS](https://github.com/codersantosh/atomic-css):**
+
+  - Atomic CSS is incorporated into the WP React Plugin Boilerplate to streamline the styling process.
+
+- **Customization Encouraged:**
+
+  - Since the WP React Plugin Boilerplate is designed to be highly customizable, developers are encouraged to modify and adapt both ATRC and Atomic CSS according to their specific project requirements.
+  - Developers are encouraged to customize any aspect of the plugin's structure, styling, or functionality according to their needs. They can remove existing libraries and/or integrate additional React, CSS, or JavaScript libraries, including Gutenberg libraries, and modify them based on their preferences and expertise. It's important to view this plugin as a starting point only, allowing developers to tailor it precisely to their requirements and optimize its performance and user experience.
+
+## Prerequisites
+
+Before getting started with the WP React Plugin Boilerplate, ensure you have the following:
+
+- **WordPress Installation:** The plugin requires a WordPress installation set up on your local machine.
+
+- **Node.js and npm:** Make sure Node.js (which includes npm, the Node Package Manager) is installed on your development environment. You can download and install Node.js from [nodejs.org](https://nodejs.org/en/download/).
+
+- **Code Editor:** Use your preferred code editor (e.g., Visual Studio Code, Sublime Text, Atom) to customize and develop the plugin.
+
+- **Basic Understanding of React:** Familiarity with React.js is recommended as the plugin utilizes React components for its frontend development.
+
+- **Basic Understanding of WordPress Coding:** Knowledge of WordPress concepts such as PHP coding, hooks, APIs (like REST API), and WordPress functions.
+
+- **Command Line Interface (CLI):** Comfortable using the command line interface (CLI) for running npm commands and managing the plugin development workflow.
+
+- **Git (Optional):** If you plan to clone the plugin repository or manage version control, Git should be installed on your system.
 
 ## GETTING STARTED
 
@@ -61,7 +108,7 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 
 Go to the Node's site [download + install](https://nodejs.org/en/download/) Node on your system. This will install both `Node.js` and `npm`, i.e., node package manager — the command line interface of Node.js.
 
-You can verify the install by opening your terminal app and typing...
+You can verify the installation by opening your terminal app and typing...
 
 ```sh
 node -v
@@ -75,10 +122,8 @@ npm -v
 
 Follow the following steps to add your functionalities to the plugin:
 
-1. Navigate to plugin files `/wp-content/plugins/your-renamed-plugin-folder`, open terminal app.
-2. Run the `npm install` command to install npm dependencies, wait sometimes to complete it.
-3. Run `npm run start` command to initialize development of React JS, Development can be done any time. Use it in the development environment.
-4. Run the `npm run build` command to finalize the development and be ready for production. The command creates production files. After building the production file move it to the production level.
+1. Navigate to plugin files `/wp-content/plugins/your-renamed-plugin-folder`, and open the terminal app.
+2. Run the `npm install` command to install npm dependencies, and wait sometimes to complete it.
 
 ### 3. Renaming the Plugin
 
@@ -106,12 +151,12 @@ With:
 - `React_Settings`,
 - `ReactSettings`
 
-now Run `npm run initial-rename`
+Now Run `npm run initial-rename`
 
 #### ii. OR Manual rename
 
-- rename folder from `wp-react-plugin-boilerplate` to `react-settings`
-- rename all files from `wp-react-plugin-boilerplate` to `react-settings` PHP,JS and CSS
+- rename the folder from `wp-react-plugin-boilerplate` to `react-settings`
+- rename all files from `wp-react-plugin-boilerplate` to `react-settings` PHP, JS and CSS
 - change `wp_react_plugin_boilerplate` to `react_settings`
 - change `wp-react-plugin-boilerplate` to `react-settings`
 - change `Wp_React_Plugin_Boilerplate` to `React_Settings`
@@ -119,9 +164,18 @@ now Run `npm run initial-rename`
 
 ### 4. Activate the Plugin:
 
-It's safe to activate the plugin at this point. Activate the plugin through the 'Plugins' screen in WordPress
+It's safe to activate the plugin at this point. Activate the plugin through the `Plugins` screen in WordPress
 
-Go to WordPress Dashboard => React Settings and View the Default Settings of the Plugin.
+Go to WordPress Dashboard => React Settings and View the Default Landing Page and Settings of the Plugin.
+
+### 5. Start Customization and Coding
+
+Since this is now your own plugin, feel free to customize using your preferred code editor and thoroughly test everything. You have the freedom to add, edit, remove, or update any files, folders, or code within the plugin. However, it's important to be knowledgeable about the changes you make. Follow these steps to begin your development:
+
+1. Navigate to plugin files `/wp-content/plugins/your-renamed-plugin-folder`,and open a terminal app.
+2. Run the `npm run start` command to initialize the development of React JS. This command sets up a development server, allowing you to see changes in real time. Use this in the development environment.
+3. Once development is complete, run the `npm run build` command to finalize the development and prepare the plugin for production. This command creates production files. After building, move the production files to the appropriate production directory.
+4. Run the `npm run deploy` command directly to create a production-ready deploy folder. This folder contains all the necessary files for deploying your plugin to a live WordPress site, skipping the need for `npm run build` beforehand.
 
 ## Folder Information
 
@@ -226,6 +280,11 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 
 ## Changelog
 
+### 2.0.1
+
+- Added: build folder
+- Updated: readme.md.
+
 ### 2.0.0
 
 ### Major Update
@@ -308,7 +367,7 @@ See also the list of [contributors](https://github.com/codersantosh/wp-react-plu
 
 - GPLv2 or later © [Santosh Kunwar](https://twitter.com/codersantosh).
 
-I would like to thanks all the React.js team, Gutenberg Team, WordPress Core Contributors, WordPress Plugin Boilerplate teams and My friends to motivate me to create the starter plugin.
+I would like to thank all the React.js team, Gutenberg Team, WordPress Core Contributors, WordPress Plugin Boilerplate teams and My friends for motivating me to create the starter plugin.
 
 ## About Me
 
