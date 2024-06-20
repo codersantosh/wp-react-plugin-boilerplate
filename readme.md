@@ -43,7 +43,7 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 
 - **Development Environment Setup:**
 
-  - Includes npm run start command to initialize React JS development environment with a live development server.
+  - Includes `npm run start` command to initialize React JS development environment with a live development server.
 
 - **Production Build:**
 
@@ -273,11 +273,6 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 ```
 
 ## Changelog
-
-### 2.0.1
-
-- Added: build folder
-- Updated: readme.md.
 
 ### 2.0.0
 
