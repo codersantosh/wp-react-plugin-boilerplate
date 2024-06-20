@@ -205,12 +205,6 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 |  └── index.php
 |
 ├── build (auto created via NPM)
-|  └── admin
-|     ├── admin-rtl.css
-|     ├── admin.asset.php
-|     ├── admin.css
-|     └── admin.js
-├── build (auto created via NPM)
 |  ├── admin
 |  |  ├── admin-rtl.css
 |  |  ├── admin.asset.php
