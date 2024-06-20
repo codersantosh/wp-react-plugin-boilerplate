@@ -10,20 +10,22 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 
 ## Table of contents
 
+## Table of Contents
+
 - [WP React Plugin Boilerplate](#wp-react-plugin-boilerplate)
-    - [Description](#description)
-    - [Table of contents](#table-of-contents)
-    - [Features](#features)
-    - [Getting Started](#getting-started)
-    - [Installation](#1-installation)
-    - [Development Setup](#2-development-setup)
-    - [Renaming the Plugin](#3-renaming-the-plugin)
-    - [Activate the Plugin](#4-activate-the-plugin)
-    - [Folder Information](#folder-information)
-    - [Changelog](#changelog)
-    - [Contributing](#contributing)
-    - [Authors](#authors)
-    - [License & Attribution](#license--attribution)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [1. Installation](#1-installation)
+    - [2. Development Setup](#2-development-setup)
+    - [3. Renaming the Plugin](#3-renaming-the-plugin)
+    - [4. Activate the Plugin](#4-activate-the-plugin)
+  - [Folder Information](#folder-information)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Authors](#authors)
+  - [License & Attribution](#license--attribution)
 
 ## Features
 
