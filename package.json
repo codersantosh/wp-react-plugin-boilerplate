@@ -6,20 +6,31 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build src/settings.js --output-path=build/admin",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start src/settings.js --output-path=build/admin",
-		"packages-update": "wp-scripts packages-update"
+		"build:admin": "wp-scripts build src/admin.js --output-path=build/admin",
+		"build:public": "wp-scripts build src/public.js --output-path=build/public",
+		"build": "npm-run-all build:admin build:public",
+		"start:admin": "wp-scripts start src/admin.js --webpack-src-dir=src/admin --output-path=build/admin",
+		"start:public": "wp-scripts start src/public.js --output-path=build/public",
+		"start": "npm-run-all --parallel start:admin start:public",
+		"packages-update": "wp-scripts packages-update",
+		"makejsstring": "node .bin/make-string.js",
+		"makepot": "wp i18n make-pot . languages/wp-react-plugin-boilerplate.pot --skip-js --exclude=src,vendor,node_modules --merge=languages/js.pot",
+		"copy": "node .bin/copy.js",
+		"deploy": "npm-run-all build makepot copy",
+		"initial-rename": "node .bin/initial-rename.js"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.19.0",
-		"autoprefixer": "^10.4.7"
+		"@wordpress/babel-plugin-makepot": "^6.1.0",
+		"@wordpress/scripts": "^27.9.0",
+		"autoprefixer": "^10.4.7",
+		"ncp": "^2.0.0",
+		"npm-run-all": "^4.1.5",
+		"replace-in-file": "^7.2.0"
 	},
 	"dependencies": {
-		"@wordpress/components": "^25.14.0",
-		"@wordpress/url": "^3.49.0",
+		"@wordpress/components": "^27.5.0",
+		"@wordpress/url": "^4.1.0",
+		"atrc": "^1.0.35",
 		"lodash": "^4.17.21",
 		"react-router-dom": "^6.3.0"
 	},

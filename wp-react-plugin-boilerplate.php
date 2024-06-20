@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -34,41 +33,41 @@ if ( ! defined( 'WPINC' ) ) {
  * Current plugin path.
  * Current plugin url.
  * Current plugin version.
- *
- * Rename these constants for your plugin
- * Update version as you release new versions.
+ * Current plugin name.
+ * Current plugin option name.
  */
-
 define( 'WP_REACT_PLUGIN_BOILERPLATE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WP_REACT_PLUGIN_BOILERPLATE_URL', plugin_dir_url( __FILE__ ) );
 define( 'WP_REACT_PLUGIN_BOILERPLATE_VERSION', '1.0.0' );
+define( 'WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME', 'wp-react-plugin-boilerplate' );
+define( 'WP_REACT_PLUGIN_BOILERPLATE_OPTION_NAME', 'wp-react-plugin-boilerplate' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-wp-react-plugin-boilerplate-activator.php
+ * This action is documented in includes/class-activator.php
  */
-function activate_wp_react_plugin_boilerplate() {
-	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-wp-react-plugin-boilerplate-activator.php';
+function wp_react_plugin_boilerplate_activate() {
+	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-activator.php';
 	Wp_React_Plugin_Boilerplate_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wp-react-plugin-boilerplate-deactivator.php
+ * This action is documented in includes/class-deactivator
  */
-function deactivate_wp_react_plugin_boilerplate() {
-	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-wp-react-plugin-boilerplate-deactivator.php';
+function wp_react_plugin_boilerplate_deactivate() {
+	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-deactivator';
 	Wp_React_Plugin_Boilerplate_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_wp_react_plugin_boilerplate' );
-register_deactivation_hook( __FILE__, 'deactivate_wp_react_plugin_boilerplate' );
+register_activation_hook( __FILE__, 'wp_react_plugin_boilerplate_activate' );
+register_deactivation_hook( __FILE__, 'wp_react_plugin_boilerplate_deactivate' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-wp-react-plugin-boilerplate.php';
+require WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/main.php';
 
 /**
  * Begins execution of the plugin.
@@ -83,6 +82,5 @@ function run_wp_react_plugin_boilerplate() {
 
 	$plugin = new Wp_React_Plugin_Boilerplate();
 	$plugin->run();
-
 }
 run_wp_react_plugin_boilerplate();

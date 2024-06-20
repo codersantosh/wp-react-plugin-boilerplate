@@ -1,0 +1,329 @@
+# Copyright (C) 2024 codersantosh
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP React Plugin Boilerplate - WordPress Setting via React and Rest API 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-react-plugin-boilerplate\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-20T16:49:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: wp-react-plugin-boilerplate\n"
+
+#: src/admin/components/atoms/save-settings.js:24
+msgid "Saved"
+msgstr ""
+
+#: src/admin/components/atoms/save-settings.js:25
+msgid "Save settings"
+msgstr ""
+
+#: src/admin/components/atoms/save-settings.js:26
+msgid "Saving"
+msgstr ""
+
+#: src/admin/components/molecules/docs-title.js:15
+msgid "Documentation"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:24
+msgid "Getting started"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:29
+#: src/admin/pages/settings/pages/settings1.js:133
+#: src/admin/pages/settings/pages/settings2.js:154
+msgid "Settings"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:47
+msgid "Show all hidden informations, notices and documentations "
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:121
+#: src/admin/pages/settings/routes.js:85
+msgid "Advanced"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:38
+msgid "Remove all plugin settings when deactivating."
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:73
+msgid "What does \"Remove all plugin settings when deactivating\" do?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:81
+msgid "Enabling this option will erase all settings associated with the plugin from the WordPress options table. However, please note that the selected page will not be deleted from Pages."
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:88
+msgid "Do I need to activate this option?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:93
+msgid "If you anticipate using the `Login feature` in the future, no need to activate it."
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:100
+msgid "FAQ Query 2?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:105
+msgid "FAQ Answer 2"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:38
+msgid "Setting 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:39
+msgid "Enter Text"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:49
+msgid "Setting 2"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:50
+msgid "Enter Another Text"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:85
+msgid "FAQ Query 1?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:93
+msgid "FAQ Answer 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:106
+msgid "FAQ Query 3?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:114
+msgid "FAQ Answer 3"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:121
+msgid "FAQ Query 4?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:126
+msgid "FAQ Answer 4"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:50
+msgid "Check to enable"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:61
+msgid "Setting 5 Select"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:65
+msgid "Option 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:69
+msgid "Option 2"
+msgstr ""
+
+#: src/admin/pages/settings/routes.js:77
+#: includes/functions.php:376
+#: includes/functions.php:383
+msgid "Settings 1"
+msgstr ""
+
+#: src/admin/pages/settings/routes.js:81
+msgid "Settings 2"
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "WP React Plugin Boilerplate - WordPress Setting via React and Rest API"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.addonspress.com/wordpress-starter-plugins/wp-react-plugin-boilerplate"
+msgstr ""
+
+#. Description of the plugin
+msgid "WordPress Setting via React and Rest API."
+msgstr ""
+
+#. Author of the plugin
+msgid "codersantosh"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.acmeit.org/"
+msgstr ""
+
+#. translators: %s: Property name.
+#: includes/api/class-api-settings.php:144
+msgid "The %s property has an invalid stored value, and cannot be updated to null."
+msgstr ""
+
+#: includes/api/class-api.php:115
+#: includes/api/class-api.php:127
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: includes/functions.php:28
+msgid "Default Setting 1"
+msgstr ""
+
+#: includes/functions.php:29
+msgid "Default Setting 2"
+msgstr ""
+
+#: includes/functions.php:175
+msgid "WP React Plugin Boilerplate"
+msgstr ""
+
+#: includes/functions.php:182
+msgid "ReactJs Settings Page"
+msgstr ""
+
+#: includes/functions.php:183
+msgid "ReactJs Settings"
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:192
+msgid "Congratulations on choosing the %s for creating your plugin. We recommend taking a few minutes to read the following information on how the plugin works. Please read it carefully to fully understand the capabilities of the plugin and how to use them effectively."
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:204
+msgid "Congratulations! You have successfully installed %s and it is ready for customization. Feel free to add/edit any files."
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:212
+msgid "If you have any questions or need assistance, please do not hesitate to contact us for support. The %s plugin caters to WordPress developers and designers seeking to quickly start developing WordPress plugins in a modern way using ReactJS, Rest API."
+msgstr ""
+
+#: includes/functions.php:221
+msgid "Get started"
+msgstr ""
+
+#: includes/functions.php:227
+msgid "Docmentation"
+msgstr ""
+
+#: includes/functions.php:233
+msgid "Get support"
+msgstr ""
+
+#: includes/functions.php:247
+msgid "Visit site"
+msgstr ""
+
+#: includes/functions.php:252
+#: includes/functions.php:264
+msgid "Get Support"
+msgstr ""
+
+#: includes/functions.php:259
+msgid "Contact Information"
+msgstr ""
+
+#: includes/functions.php:263
+msgid "Support"
+msgstr ""
+
+#: includes/functions.php:270
+msgid "Email"
+msgstr ""
+
+#: includes/functions.php:271
+msgid "codersantosh@gmail.com"
+msgstr ""
+
+#: includes/functions.php:277
+msgid "Location"
+msgstr ""
+
+#: includes/functions.php:278
+msgid "Kathmandu, Nepal"
+msgstr ""
+
+#: includes/functions.php:302
+msgid "Activate Plugin"
+msgstr ""
+
+#: includes/functions.php:306
+msgid "Login settings"
+msgstr ""
+
+#: includes/functions.php:310
+msgid "Dashboard settings"
+msgstr ""
+
+#: includes/functions.php:316
+msgid "Knowledge base"
+msgstr ""
+
+#: includes/functions.php:317
+msgid "The utilization of this plugin can be facilitated by perusing comprehensive and well-documented articles."
+msgstr ""
+
+#: includes/functions.php:321
+msgid "Visit knowledge base"
+msgstr ""
+
+#: includes/functions.php:327
+msgid "Community"
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:330
+msgid "Our objective is to enhance the customer experience, we invite you to join our community where you can receive immediate support."
+msgstr ""
+
+#: includes/functions.php:336
+msgid "Visit community page"
+msgstr ""
+
+#: includes/functions.php:341
+msgid "24x7 support"
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:344
+msgid "Our support team is available 24/7 to assist you in the event that you encounter any problems while utilizing this plugin."
+msgstr ""
+
+#: includes/functions.php:350
+msgid "Create a support thread"
+msgstr ""
+
+#: includes/functions.php:356
+msgid "Video guide"
+msgstr ""
+
+#. translators: %s is the plugin name
+#: includes/functions.php:359
+msgid "The plugin is accompanied by comprehensive video tutorials that provide practical demonstrations for most customization."
+msgstr ""
+
+#: includes/functions.php:365
+msgid "View video guide"
+msgstr ""
+
+#: includes/functions.php:372
+msgid "Quick links to settings"
+msgstr ""
+
+#: includes/functions.php:391
+msgid "Advanced settings"
+msgstr ""
+
+#: includes/functions.php:401
+msgid "Changelog"
+msgstr ""

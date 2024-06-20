@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/admin/components/atoms/save-settings.js:24
+msgid "Saved"
+msgstr ""
+
+#: src/admin/components/atoms/save-settings.js:25
+msgid "Save settings"
+msgstr ""
+
+#: src/admin/components/atoms/save-settings.js:26
+msgid "Saving"
+msgstr ""
+
+#: src/admin/components/molecules/docs-title.js:15
+msgid "Documentation"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:24
+msgid "Getting started"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:29
+#: src/admin/pages/settings/pages/settings1.js:133
+#: src/admin/pages/settings/pages/settings2.js:154
+msgid "Settings"
+msgstr ""
+
+#: src/admin/components/organisms/admin-header.js:47
+msgid "Show all hidden informations, notices and documentations "
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:121
+#: src/admin/pages/settings/routes.js:85
+msgid "Advanced"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:38
+msgid "Remove all plugin settings when deactivating."
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:73
+msgid "What does \"Remove all plugin settings when deactivating\" do?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:81
+msgid ""
+"Enabling this option will erase all settings associated with the plugin "
+"from the WordPress options table. However, please note that the selected "
+"page will not be deleted from Pages."
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:88
+msgid "Do I need to activate this option?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/advanced.js:93
+msgid ""
+"If you anticipate using the `Login feature` in the future, no need to "
+"activate it."
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:100
+msgid "FAQ Query 2?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:105
+msgid "FAQ Answer 2"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:38
+msgid "Setting 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:39
+msgid "Enter Text"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:49
+msgid "Setting 2"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:50
+msgid "Enter Another Text"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:85
+msgid "FAQ Query 1?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings1.js:93
+msgid "FAQ Answer 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:106
+msgid "FAQ Query 3?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:114
+msgid "FAQ Answer 3"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:121
+msgid "FAQ Query 4?"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:126
+msgid "FAQ Answer 4"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:50
+msgid "Check to enable"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:61
+msgid "Setting 5 Select"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:65
+msgid "Option 1"
+msgstr ""
+
+#: src/admin/pages/settings/pages/settings2.js:69
+msgid "Option 2"
+msgstr ""
+
+#: src/admin/pages/settings/routes.js:77
+msgid "Settings 1"
+msgstr ""
+
+#: src/admin/pages/settings/routes.js:81
+msgid "Settings 2"
+msgstr ""

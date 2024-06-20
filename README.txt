@@ -3,7 +3,7 @@ Contributors:      codersantosh
 Donate link: https://www.acmeit.org/
 Tags:             options, settings, react, gutenberg, block, core editor, components, wordpress
 Requires at least: 5.5
-Tested up to: 6.0
+Tested up to: 6.5
 Stable tag: 1.0.0
 Requires PHP: 5.6.20
 License: GPLv2 or later
@@ -36,14 +36,6 @@ Follow the following steps to install this starter boilerplate plugin:
 Navigate to plugin files `/wp-content/plugins/wp-react-plugin-boilerplate/src` and start adding features
 
  == Changelog ==
-
- = 1.0.1 =
- Major Update
- * Added: Uses React Router, Context, and Reducer
- * Added: Atomic Design Methodology
- * Added: [AT Grid](https://github.com/codersantosh/at-grid)
- * Updated: Uses Inbuilt WordPress Settings API
- * Updated: UI and UX
 
  = 1.0.0 =
  * Initial Release
