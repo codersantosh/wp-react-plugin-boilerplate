@@ -8,8 +8,6 @@ WP React Plugin Boilerplate is a starter WordPress plugin to develop WordPress P
 
 This boilerplate provides a foundation for building modern WordPress plugins.
 
-## Table of contents
-
 ## Table of Contents
 
 - [WP React Plugin Boilerplate](#wp-react-plugin-boilerplate)
