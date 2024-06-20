@@ -56,7 +56,7 @@ function wp_react_plugin_boilerplate_activate() {
  * This action is documented in includes/class-deactivator
  */
 function wp_react_plugin_boilerplate_deactivate() {
-	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-deactivator';
+	require_once WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/class-deactivator.php';
 	Wp_React_Plugin_Boilerplate_Deactivator::deactivate();
 }
 

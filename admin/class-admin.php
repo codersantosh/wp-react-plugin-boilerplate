@@ -162,30 +162,27 @@ class Wp_React_Plugin_Boilerplate_Admin {
 		$setting_properties = apply_filters(
 			'wp_react_plugin_boilerplate_options_properties',
 			array(
-				'type'       => 'object',
-				'properties' => array(
-					/*Settings -> Settings1*/
-					'setting1'  => array(
-						'type' => 'string',
-					),
-					'setting2'  => array(
-						'type' => 'string',
-					),
-					/*Settings -> Settings2*/
-					'setting3'  => array(
-						'type' => 'boolean',
-					),
-					'setting4'  => array(
-						'type' => 'boolean',
-					),
-					'setting5'  => array(
-						'type'              => 'string',
-						'sanitize_callback' => 'sanitize_key',
-					),
-					/*Settings -> Advanced*/
-					'deleteAll' => array(
-						'type' => 'boolean',
-					),
+				/*Settings -> Settings1*/
+				'setting1'  => array(
+					'type' => 'string',
+				),
+				'setting2'  => array(
+					'type' => 'string',
+				),
+				/*Settings -> Settings2*/
+				'setting3'  => array(
+					'type' => 'boolean',
+				),
+				'setting4'  => array(
+					'type' => 'boolean',
+				),
+				'setting5'  => array(
+					'type'              => 'string',
+					'sanitize_callback' => 'sanitize_key',
+				),
+				/*Settings -> Advanced*/
+				'deleteAll' => array(
+					'type' => 'boolean',
 				),
 			),
 		);
