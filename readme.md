@@ -24,6 +24,7 @@ This boilerplate provides a foundation for building modern WordPress plugins.
   - [Changelog](#changelog)
   - [Contributing](#contributing)
   - [Authors](#authors)
+  - [Recommendations](#recommendations)
   - [License & Attribution](#license--attribution)
 
 ## Features
@@ -64,6 +65,10 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 
   - Atomic CSS is incorporated into the WP React Plugin Boilerplate to streamline the styling process.
 
+- **[Atomic React Components](https://github.com/codersantosh/atrc) `atrc-prefix-atrc` text domain replacement command:**
+
+  - Provides `npm run replaceAtrc` command to replace `atrc-prefix-atrc` text domain with your plugin's text domain.
+
 - **Customization Encouraged:**
 
   - Since the WP React Plugin Boilerplate is designed to be highly customizable, developers are encouraged to modify and adapt both ATRC and Atomic CSS according to their specific project requirements.
@@ -99,7 +104,7 @@ Before getting started with the WP React Plugin Boilerplate, ensure you have the
 
   Or download and upload the plugin files to /wp-content/plugins/wp-react-plugin-boilerplate.
 
-- Rename the folder name wp-react-plugin-boilerplate to your plugin folder.
+- Rename the folder name `wp-react-plugin-boilerplate` to your plugin folder.
 
 ### 2. Development Setup
 
@@ -127,7 +132,7 @@ Follow the following steps to add your functionalities to the plugin:
 
 ### 3. Renaming the Plugin
 
-You need to rename the plugin folder and file names. Additionally, you should update the constants, variables, classes, text-domain, and functions within the plugin to align with your plugin name. For instance, if your plugin is named 'react-settings', then:
+You need to rename the plugin folder and file names. Additionally, you should update the constants, variables, classes, text-domain, and functions within the plugin to align with your plugin name. For instance, if your plugin is named `react-settings`, then:
 
 #### i. Renaming using command
 
@@ -162,13 +167,17 @@ Now Run `npm run initial-rename`
 - change `Wp_React_Plugin_Boilerplate` to `React_Settings`
 - change `WP_REACT_PLUGIN_BOILERPLATE` to `REACT_SETTINGS`
 
-### 4. Activate the Plugin:
+### 4. Rename the language file:
+
+In the plugin folder, open `package.json` and modify the makepot command on line 17. Change `wp-react-plugin-boilerplate.pot` to `react-settings.pot` ( your plugin ).
+
+### 5. Activate the Plugin:
 
 It's safe to activate the plugin at this point. Activate the plugin through the `Plugins` screen in WordPress
 
 Go to WordPress Dashboard => React Settings and View the Default Landing Page and Settings of the Plugin.
 
-### 5. Start Customization and Coding
+### 6. Start Customization and Coding
 
 Since this is now your own plugin, feel free to customize using your preferred code editor and thoroughly test everything. You have the freedom to add, edit, remove, or update any files, folders, or code within the plugin. However, it's important to be knowledgeable about the changes you make. Follow these steps to begin your development:
 
@@ -198,7 +207,8 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 ├── .bin
 |  ├── copy.js
 |  ├── initial-rename.js
-|  └── make-string.js
+|  ├── make-string.js
+|  └── replace-atrc.js
 |
 ├── admin
 |  ├── class-admin.php
@@ -273,6 +283,11 @@ INSIDE: /wp-installatioon-folder/wp-content/plugins/your-renamed-plugin-folder
 ```
 
 ## Changelog
+
+### 2.0.1
+
+- Added: Command to replace the text domain of atrc.
+- Updated: readme file.
 
 ### 2.0.0
 
@@ -351,6 +366,12 @@ Thank you for contributing to this project!
 - **Santosh Kunwar** - [codersantosh](https://twitter.com/codersantosh)
 
 See also the list of [contributors](https://github.com/codersantosh/wp-react-plugin-boilerplate/graphs/contributors) who participated in this project.
+
+## Recommendations
+
+- [ATOMIC WP CUSTOM TABLE AND QUERY](https://github.com/codersantosh/atomic-wp-custom-table-and-query)
+- [Atrc (atrc) - Atomic React Components](https://www.npmjs.com/package/atrc)
+- [Atomic CSS](https://github.com/codersantosh/atomic-css)
 
 ## License & Attribution
 

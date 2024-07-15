@@ -23,7 +23,7 @@ const options = {
         /WpReactPluginBoilerplate/g,
     ],
     to: [
-        'your-renamed-plugin',
+        'your-renamed-plugin',/******************** replace with your plugin details */
         'your_renamed_plugin',
         'YOUR_RENAMED_PLUGIN',
         'YOUR-RENAMED-PLUGIN',
@@ -45,7 +45,7 @@ async function renamePHPFiles() {
             const baseName = path.basename(file);
             const newBaseName = baseName.replace(
                 /wp-react-plugin-boilerplate/gi,
-                'your-renamed-plugin'
+                'your-renamed-plugin'/******************** replace with your plugin details */
             );
             const newFileName = path.join(dir, newBaseName);
 

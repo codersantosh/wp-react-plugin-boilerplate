@@ -16,7 +16,8 @@
 		"makejsstring": "node .bin/make-string.js",
 		"makepot": "wp i18n make-pot . languages/wp-react-plugin-boilerplate.pot --skip-js --exclude=src,vendor,node_modules --merge=languages/js.pot",
 		"copy": "node .bin/copy.js",
-		"deploy": "npm-run-all build makepot copy",
+		"replaceAtrc": "node .bin/replace-atrc.js",
+		"deploy": "npm-run-all build replaceAtrc makepot copy",
 		"initial-rename": "node .bin/initial-rename.js"
 	},
 	"devDependencies": {
