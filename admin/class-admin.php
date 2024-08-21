@@ -216,6 +216,29 @@ class Wp_React_Plugin_Boilerplate_Admin {
 			)
 		);
 	}
+
+	/**
+	 * Add plugin menu items.
+	 *
+	 * @access public
+	 *
+	 * @since 1.0.0
+	 * @param string[] $actions     An array of plugin action links. By default this can include
+	 *                              'activate', 'deactivate', and 'delete'. With Multisite active
+	 *                              this can also include 'network_active' and 'network_only' items.
+	 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
+	 * @param array    $plugin_data An array of plugin data. See get_plugin_data()
+	 *                              and the {@see 'plugin_row_meta'} filter for the list
+	 *                              of possible values.
+	 * @param string   $context     The plugin context. By default this can include 'all',
+	 *                              'active', 'inactive', 'recently_activated', 'upgrade',
+	 *                              'mustuse', 'dropins', and 'search'.
+	 * @return array settings schema for this plugin.
+	 */
+	public function add_plugin_links( $actions, $plugin_file, $plugin_data, $context ) {
+		$actions[] = '<a href="' . esc_url( menu_page_url( $this->menu_info['menu_slug'], false ) ) . '">' . esc_html__( 'Settings', 'wp-react-plugin-boilerplate' ) . '</a>';
+		return $actions;
+	}
 }
 
 if ( ! function_exists( 'wp_react_plugin_boilerplate_admin' ) ) {

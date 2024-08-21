@@ -78,9 +78,9 @@ require WP_REACT_PLUGIN_BOILERPLATE_PATH . 'includes/main.php';
  *
  * @since    1.0.0
  */
-function run_wp_react_plugin_boilerplate() {
+function wp_react_plugin_boilerplate_run() {
 
 	$plugin = new Wp_React_Plugin_Boilerplate();
 	$plugin->run();
 }
-run_wp_react_plugin_boilerplate();
+wp_react_plugin_boilerplate_run();

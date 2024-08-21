@@ -31,24 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Wp_React_Plugin_Boilerplate_Include {
 
 	/**
-	 * Static property to store Options Settings
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      array    settings All settings for this plugin.
-	 */
-	private static $settings = null;
-
-	/**
-	 * Static property to store white label settings
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      array    settings All settings for this plugin.
-	 */
-	private static $white_label = null;
-
-	/**
 	 * Gets an instance of this object.
 	 * Prevents duplicate instances which avoid artefacts and improves performance.
 	 *
@@ -63,25 +45,29 @@ class Wp_React_Plugin_Boilerplate_Include {
 
 		// Only run these methods if they haven't been ran previously.
 		if ( null === $instance ) {
-			/* Query only once */
-			self::$settings    = wp_react_plugin_boilerplate_get_options();
-			self::$white_label = wp_react_plugin_boilerplate_get_white_label();
-
 			$instance = new self();
 		}
 
 		// Always return the instance.
 		return $instance;
 	}
-
 	/**
-	 * Get the settings from the class instance.
+	 * Get the settings with caching.
 	 *
 	 * @access public
+	 * @param string $key optional meta key.
 	 * @return array|null
 	 */
-	public function get_settings() {
-		return self::$settings;
+	public function get_settings( $key = '' ) {
+		static $cache = null;
+		if ( ! $cache ) {
+			$cache = wp_react_plugin_boilerplate_get_options();
+		}
+		if ( ! empty( $key ) ) {
+			return isset( $cache[ $key ] ) ? $cache[ $key ] : false;
+		}
+
+		return $cache;
 	}
 
 	/**
@@ -91,7 +77,12 @@ class Wp_React_Plugin_Boilerplate_Include {
 	 * @return array|null
 	 */
 	public function get_white_label() {
-		return self::$white_label;
+		static $cache = null;
+		if ( ! $cache ) {
+			$cache = wp_react_plugin_boilerplate_get_white_label();
+		}
+
+		return $cache;
 	}
 
 	/**

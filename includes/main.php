@@ -164,6 +164,8 @@ class Wp_React_Plugin_Boilerplate {
 		/*Register Settings*/
 		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_settings' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
+
+		$this->loader->add_filter( 'plugin_action_links_wp-react-plugin-boilerplate/wp-react-plugin-boilerplate.php', $plugin_admin, 'add_plugin_links', 10, 4 );
 	}
 
 	/**
