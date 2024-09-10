@@ -1,9 +1,9 @@
 === WP React Plugin Boilerplate ===
 Contributors:      codersantosh
 Donate link: https://www.acmeit.org/
-Tags:             options, settings, react, gutenberg, block, core editor, components, wordpress
+Tags: options, settings, react components, gutenberg block core editor
 Requires at least: 5.5
-Tested up to: 6.5
+Tested up to: 6.6
 Stable tag: 1.0.0
 Requires PHP: 5.6.20
 License: GPLv2 or later

@@ -6,11 +6,11 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build:admin": "wp-scripts build src/admin.js --output-path=build/admin",
-		"build:public": "wp-scripts build src/public.js --output-path=build/public",
+		"build:admin": "wp-scripts build src/admin.js --webpack-src-dir='' --output-path=build/admin",
+		"build:public": "wp-scripts build src/public.js --webpack-src-dir='' --output-path=build/public",
 		"build": "npm-run-all build:admin build:public",
-		"start:admin": "wp-scripts start src/admin.js --webpack-src-dir=src/admin --output-path=build/admin",
-		"start:public": "wp-scripts start src/public.js --output-path=build/public",
+		"start:admin": "wp-scripts start src/admin.js --webpack-src-dir='' --output-path=build/admin",
+		"start:public": "wp-scripts start src/public.js --webpack-src-dir='' --output-path=build/public",
 		"start": "npm-run-all --parallel start:admin start:public",
 		"packages-update": "wp-scripts packages-update",
 		"makejsstring": "node .bin/make-string.js",
@@ -21,16 +21,16 @@
 		"initial-rename": "node .bin/initial-rename.js"
 	},
 	"devDependencies": {
-		"@wordpress/babel-plugin-makepot": "^6.1.0",
-		"@wordpress/scripts": "^27.9.0",
+		"@wordpress/babel-plugin-makepot": "^6.7.0",
+		"@wordpress/scripts": "^29.0.0",
 		"autoprefixer": "^10.4.7",
 		"ncp": "^2.0.0",
 		"npm-run-all": "^4.1.5",
 		"replace-in-file": "^7.2.0"
 	},
 	"dependencies": {
-		"@wordpress/components": "^27.5.0",
-		"@wordpress/url": "^4.1.0",
+		"@wordpress/components": "^28.7.0",
+		"@wordpress/url": "^4.7.0",
 		"atrc": "^1.0.35",
 		"lodash": "^4.17.21",
 		"react-router-dom": "^6.3.0"
