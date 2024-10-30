@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-10T09:25:04+00:00\n"
+"POT-Creation-Date: 2024-10-30T09:04:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: wp-react-plugin-boilerplate\n"
@@ -37,7 +37,7 @@ msgstr ""
 #: src/admin/components/organisms/admin-header.js:29
 #: src/admin/pages/settings/pages/settings1.js:133
 #: src/admin/pages/settings/pages/settings2.js:154
-#: admin/class-admin.php:239
+#: admin/class-admin.php:273
 msgid "Settings"
 msgstr ""
 

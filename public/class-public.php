@@ -66,9 +66,12 @@ class Wp_React_Plugin_Boilerplate_Public {
 		 */
 		/* Atomic CSS */
 		wp_enqueue_style( 'atomic' );
+		wp_style_add_data( 'atomic', 'rtl', 'replace' );
+
 		$version = WP_REACT_PLUGIN_BOILERPLATE_VERSION;
 
 		wp_enqueue_style( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/public/public.css', array(), $version );
+		wp_style_add_data( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, 'rtl', 'replace' );
 
 		/*Scripts dependency files*/
 		$deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/public/public.asset.php';
