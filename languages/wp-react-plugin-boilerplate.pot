@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-30T09:04:33+00:00\n"
+"POT-Creation-Date: 2024-10-30T09:48:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: wp-react-plugin-boilerplate\n"
@@ -38,6 +38,7 @@ msgstr ""
 #: src/admin/pages/settings/pages/settings1.js:133
 #: src/admin/pages/settings/pages/settings2.js:154
 #: admin/class-admin.php:273
+#: deploy/admin/class-admin.php:273
 msgid "Settings"
 msgstr ""
 
@@ -135,6 +136,8 @@ msgid "Option 2"
 msgstr ""
 
 #: src/admin/pages/settings/routes.js:77
+#: deploy/includes/functions.php:376
+#: deploy/includes/functions.php:383
 #: includes/functions.php:376
 #: includes/functions.php:383
 msgid "Settings 1"
@@ -165,166 +168,207 @@ msgid "https://www.acmeit.org/"
 msgstr ""
 
 #. translators: %s: Property name.
+#: deploy/includes/api/class-api-settings.php:144
 #: includes/api/class-api-settings.php:144
 msgid "The %s property has an invalid stored value, and cannot be updated to null."
 msgstr ""
 
+#: deploy/includes/api/class-api.php:115
+#: deploy/includes/api/class-api.php:127
 #: includes/api/class-api.php:115
 #: includes/api/class-api.php:127
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
+#: deploy/includes/functions.php:28
 #: includes/functions.php:28
 msgid "Default Setting 1"
 msgstr ""
 
+#: deploy/includes/functions.php:29
 #: includes/functions.php:29
 msgid "Default Setting 2"
 msgstr ""
 
+#: deploy/includes/functions.php:175
 #: includes/functions.php:175
 msgid "WP React Plugin Boilerplate"
 msgstr ""
 
+#: deploy/includes/functions.php:182
 #: includes/functions.php:182
 msgid "ReactJs Settings Page"
 msgstr ""
 
+#: deploy/includes/functions.php:183
 #: includes/functions.php:183
 msgid "ReactJs Settings"
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:192
 #: includes/functions.php:192
 msgid "Congratulations on choosing the %s for creating your plugin. We recommend taking a few minutes to read the following information on how the plugin works. Please read it carefully to fully understand the capabilities of the plugin and how to use them effectively."
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:204
 #: includes/functions.php:204
 msgid "Congratulations! You have successfully installed %s and it is ready for customization. Feel free to add/edit any files."
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:212
 #: includes/functions.php:212
 msgid "If you have any questions or need assistance, please do not hesitate to contact us for support. The %s plugin caters to WordPress developers and designers seeking to quickly start developing WordPress plugins in a modern way using ReactJS, Rest API."
 msgstr ""
 
+#: deploy/includes/functions.php:221
 #: includes/functions.php:221
 msgid "Get started"
 msgstr ""
 
+#: deploy/includes/functions.php:227
 #: includes/functions.php:227
 msgid "Docmentation"
 msgstr ""
 
+#: deploy/includes/functions.php:233
 #: includes/functions.php:233
 msgid "Get support"
 msgstr ""
 
+#: deploy/includes/functions.php:247
 #: includes/functions.php:247
 msgid "Visit site"
 msgstr ""
 
+#: deploy/includes/functions.php:252
+#: deploy/includes/functions.php:264
 #: includes/functions.php:252
 #: includes/functions.php:264
 msgid "Get Support"
 msgstr ""
 
+#: deploy/includes/functions.php:259
 #: includes/functions.php:259
 msgid "Contact Information"
 msgstr ""
 
+#: deploy/includes/functions.php:263
 #: includes/functions.php:263
 msgid "Support"
 msgstr ""
 
+#: deploy/includes/functions.php:270
 #: includes/functions.php:270
 msgid "Email"
 msgstr ""
 
+#: deploy/includes/functions.php:271
 #: includes/functions.php:271
 msgid "codersantosh@gmail.com"
 msgstr ""
 
+#: deploy/includes/functions.php:277
 #: includes/functions.php:277
 msgid "Location"
 msgstr ""
 
+#: deploy/includes/functions.php:278
 #: includes/functions.php:278
 msgid "Kathmandu, Nepal"
 msgstr ""
 
+#: deploy/includes/functions.php:302
 #: includes/functions.php:302
 msgid "Activate Plugin"
 msgstr ""
 
+#: deploy/includes/functions.php:306
 #: includes/functions.php:306
 msgid "Login settings"
 msgstr ""
 
+#: deploy/includes/functions.php:310
 #: includes/functions.php:310
 msgid "Dashboard settings"
 msgstr ""
 
+#: deploy/includes/functions.php:316
 #: includes/functions.php:316
 msgid "Knowledge base"
 msgstr ""
 
+#: deploy/includes/functions.php:317
 #: includes/functions.php:317
 msgid "The utilization of this plugin can be facilitated by perusing comprehensive and well-documented articles."
 msgstr ""
 
+#: deploy/includes/functions.php:321
 #: includes/functions.php:321
 msgid "Visit knowledge base"
 msgstr ""
 
+#: deploy/includes/functions.php:327
 #: includes/functions.php:327
 msgid "Community"
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:330
 #: includes/functions.php:330
 msgid "Our objective is to enhance the customer experience, we invite you to join our community where you can receive immediate support."
 msgstr ""
 
+#: deploy/includes/functions.php:336
 #: includes/functions.php:336
 msgid "Visit community page"
 msgstr ""
 
+#: deploy/includes/functions.php:341
 #: includes/functions.php:341
 msgid "24x7 support"
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:344
 #: includes/functions.php:344
 msgid "Our support team is available 24/7 to assist you in the event that you encounter any problems while utilizing this plugin."
 msgstr ""
 
+#: deploy/includes/functions.php:350
 #: includes/functions.php:350
 msgid "Create a support thread"
 msgstr ""
 
+#: deploy/includes/functions.php:356
 #: includes/functions.php:356
 msgid "Video guide"
 msgstr ""
 
 #. translators: %s is the plugin name
+#: deploy/includes/functions.php:359
 #: includes/functions.php:359
 msgid "The plugin is accompanied by comprehensive video tutorials that provide practical demonstrations for most customization."
 msgstr ""
 
+#: deploy/includes/functions.php:365
 #: includes/functions.php:365
 msgid "View video guide"
 msgstr ""
 
+#: deploy/includes/functions.php:372
 #: includes/functions.php:372
 msgid "Quick links to settings"
 msgstr ""
 
+#: deploy/includes/functions.php:391
 #: includes/functions.php:391
 msgid "Advanced settings"
 msgstr ""
 
+#: deploy/includes/functions.php:401
 #: includes/functions.php:401
 msgid "Changelog"
 msgstr ""
