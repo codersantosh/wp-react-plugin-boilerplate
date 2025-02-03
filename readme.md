@@ -85,6 +85,8 @@ Before getting started with the WP React Plugin Boilerplate, ensure you have the
 
 - **Node.js and npm:** Make sure Node.js (which includes npm, the Node Package Manager) is installed on your development environment. You can download and install Node.js from [nodejs.org](https://nodejs.org/en/download/).
 
+- **WP-CLI:** Required to generate `.pot` files for language translations. [Install WP-CLI](https://make.wordpress.org/cli/handbook/guides/installing/)| [View More](https://wp-cli.org/).
+
 - **Code Editor:** Use your preferred code editor (e.g., Visual Studio Code, Sublime Text, Atom) to customize and develop the plugin.
 
 - **Basic Understanding of React:** Familiarity with React.js is recommended as the plugin utilizes React components for its frontend development.
