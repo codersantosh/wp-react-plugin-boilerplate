@@ -35,13 +35,6 @@ This boilerplate provides a foundation for building modern WordPress plugins.
   - Adjust the naming strings.
   - Run `npm run initial-rename`
 
-- **Language File Creation:** Generates `.pot` files from both JavaScript and PHP code.
-
-- **Deployment Command:**
-
-  - Run `npm run deploy` to create a production-ready deploy folder.
-  - Rename and upload this folder to your WordPress site or WordPress.org after thorough testing.
-
 - **Development Environment Setup:**
 
   - Includes `npm run start` command to initialize React JS development environment with a live development server.
@@ -49,6 +42,16 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 - **Production Build:**
 
   - Provides `npm run build` command to generate optimized production files for the plugin.
+
+- **Language File Creation:** 
+
+  - Generates `.pot` files from both JavaScript and PHP code.
+  - Includes the `npm run makepot` command to generate the `.pot` file. Note: The JavaScript language file is created using `@wordpress/babel-preset-default`. The `npm run makepot` command utilizes WP-CLI to generate PHP file translations and merge them with the `JavaScript .pot` file to produce the final `.pot` file.
+
+- **Deployment Command:**
+
+  - Run `npm run deploy` to create a production-ready deploy folder.
+  - Rename and upload this folder to your WordPress site or WordPress.org after thorough testing.
 
 - **REST API Integration:**
 
