@@ -35,13 +35,6 @@ This boilerplate provides a foundation for building modern WordPress plugins.
   - Adjust the naming strings.
   - Run `npm run initial-rename`
 
-- **Language File Creation:** Generates `.pot` files from both JavaScript and PHP code.
-
-- **Deployment Command:**
-
-  - Run `npm run deploy` to create a production-ready deploy folder.
-  - Rename and upload this folder to your WordPress site or WordPress.org after thorough testing.
-
 - **Development Environment Setup:**
 
   - Includes `npm run start` command to initialize React JS development environment with a live development server.
@@ -49,6 +42,16 @@ This boilerplate provides a foundation for building modern WordPress plugins.
 - **Production Build:**
 
   - Provides `npm run build` command to generate optimized production files for the plugin.
+
+- **Language File Creation:** 
+
+  - Generates `.pot` files from both JavaScript and PHP code.
+  - Includes the `npm run makepot` command to generate the `.pot` file. Note: The JavaScript language file is created using `@wordpress/babel-preset-default`. The `npm run makepot` command utilizes WP-CLI to generate PHP file translations and merge them with the `JavaScript .pot` file to produce the final `.pot` file.
+
+- **Deployment Command:**
+
+  - Run `npm run deploy` to create a production-ready deploy folder.
+  - Rename and upload this folder to your WordPress site or WordPress.org after thorough testing.
 
 - **REST API Integration:**
 
@@ -81,6 +84,8 @@ Before getting started with the WP React Plugin Boilerplate, ensure you have the
 - **WordPress Installation:** The plugin requires a WordPress installation set up on your local machine.
 
 - **Node.js and npm:** Make sure Node.js (which includes npm, the Node Package Manager) is installed on your development environment. You can download and install Node.js from [nodejs.org](https://nodejs.org/en/download/).
+
+- **WP-CLI:** Required to generate `.pot` files for language translations. [Install WP-CLI](https://make.wordpress.org/cli/handbook/guides/installing/)| [View More](https://wp-cli.org/).
 
 - **Code Editor:** Use your preferred code editor (e.g., Visual Studio Code, Sublime Text, Atom) to customize and develop the plugin.
 
