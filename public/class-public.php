@@ -70,11 +70,11 @@ class Wp_React_Plugin_Boilerplate_Public {
 
 		$version = WP_REACT_PLUGIN_BOILERPLATE_VERSION;
 
-		wp_enqueue_style( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/public/public.css', array(), $version );
+		wp_enqueue_style( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/public/index.css', array(), $version );
 		wp_style_add_data( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, 'rtl', 'replace' );
 
 		/*Scripts dependency files*/
-		$deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/public/public.asset.php';
+		$deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/public/index.asset.php';
 
 		/*Fallback dependency array*/
 		$dependency = array();
@@ -86,7 +86,7 @@ class Wp_React_Plugin_Boilerplate_Public {
 			$version    = $deps_file['version'];
 		}
 
-		wp_enqueue_script( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/public/public.js', $dependency, $version, true );
+		wp_enqueue_script( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/public/index.js', $dependency, $version, true );
 		wp_set_script_translations( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME );
 
 		$localize = apply_filters(

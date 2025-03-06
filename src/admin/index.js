@@ -25,5 +25,5 @@ AtrcStore.register({
 AtrcApis.xWpNonce(WpReactPluginBoilerplateLocalize.nonce);
 AtrcRegisterStore(WpReactPluginBoilerplateLocalize.store);
 
-import './admin/routes';
+import './routes';
 
