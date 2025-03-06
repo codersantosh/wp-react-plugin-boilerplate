@@ -144,7 +144,7 @@ class Wp_React_Plugin_Boilerplate_Admin {
 		wp_style_add_data( 'atomic', 'rtl', 'replace' );
 
 		/*Scripts dependency files*/
-		$deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/admin/admin.asset.php';
+		$deps_file = WP_REACT_PLUGIN_BOILERPLATE_PATH . 'build/admin/index.asset.php';
 
 		/*Fallback dependency array*/
 		$dependency = array();
@@ -157,10 +157,10 @@ class Wp_React_Plugin_Boilerplate_Admin {
 			$version    = $deps_file['version'];
 		}
 
-		wp_enqueue_script( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/admin.js', $dependency, $version, true );
+		wp_enqueue_script( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/index.js', $dependency, $version, true );
 
 		wp_enqueue_style( 'google-fonts-open-sans', WP_REACT_PLUGIN_BOILERPLATE_URL . 'assets/library/fonts/open-sans.css', '', $version );
-		wp_enqueue_style( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/admin.css', array( 'wp-components' ), $version );
+		wp_enqueue_style( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, WP_REACT_PLUGIN_BOILERPLATE_URL . 'build/admin/index.css', array( 'wp-components' ), $version );
 		wp_style_add_data( WP_REACT_PLUGIN_BOILERPLATE_PLUGIN_NAME, 'rtl', 'replace' );
 
 		/* Localize */
